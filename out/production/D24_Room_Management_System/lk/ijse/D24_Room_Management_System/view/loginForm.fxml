@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.D24_Room_Management_System.controller.LoginFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="188.0" fitWidth="172.0" layoutX="955.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assest/Screenshot%202023-03-28%20000438.png" />
+         </image>
+      </ImageView>
+      <JFXTextField labelFloat="true" layoutX="671.0" layoutY="339.0" prefHeight="34.0" prefWidth="318.0" promptText="User name">
+         <font>
+            <Font name="Calibri" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField labelFloat="true" layoutX="671.0" layoutY="428.0" prefHeight="34.0" prefWidth="318.0" promptText="Password">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXPasswordField>
+      <Text fill="#575353" layoutX="479.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER" wrappingWidth="241.28094482421875">
+         <font>
+            <Font name="Georgia" size="45.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="405.0" fitWidth="541.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assest/docs-illustration-1.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="872.0" layoutY="554.0" prefHeight="42.0" prefWidth="122.0" ripplerFill="#cc0fb2" style="-fx-background-color: #5f27cd; -fx-background-radius: 15;" text="Login" textFill="#f6f6f6" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fill="#555151" layoutX="671.0" layoutY="511.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forget Password" wrappingWidth="97.0252685546875">
+         <font>
+            <Font name="Corbel Bold Italic" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <JFXCheckBox layoutX="886.0" layoutY="499.0" text="Show Password" />
+   </children>
 </AnchorPane>
