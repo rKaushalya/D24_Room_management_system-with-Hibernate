@@ -39,7 +39,7 @@
             <Image url="@assest/docs-illustration-1.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="872.0" layoutY="554.0" prefHeight="42.0" prefWidth="122.0" ripplerFill="#cc0fb2" style="-fx-background-color: #5f27cd; -fx-background-radius: 15;" text="Login" textFill="#f6f6f6" wrapText="true">
+      <JFXButton layoutX="865.0" layoutY="559.0" prefHeight="51.0" prefWidth="129.0" ripplerFill="#cc0fb2" style="-fx-background-color: #5f27cd; -fx-background-radius: 15;" text="Login" textFill="#f6f6f6" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>
@@ -47,7 +47,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Text fill="#555151" layoutX="671.0" layoutY="511.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forget Password" wrappingWidth="97.0252685546875">
+      <Text fill="#555151" layoutX="671.0" layoutY="511.0" strokeWidth="0.0" text="Forget Password" wrappingWidth="97.0252685546875">
          <font>
             <Font name="Corbel Bold Italic" size="13.0" />
          </font>
