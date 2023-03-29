@@ -1,14 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.D24_Room_Management_System.controller.RegisterRoomFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="802.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.RegisterRoomFormController">
+   <children>
+      <Text fill="#575353" layoutX="340.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register Room" textAlignment="CENTER" wrappingWidth="231.94757080078125">
+         <font>
+            <Font name="Georgia" size="35.0" />
+         </font>
+      </Text>
+      <Text layoutX="204.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Id :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="203.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="203.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="204.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="203.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <JFXDatePicker defaultColor="#1637ba" layoutX="374.0" layoutY="408.0" prefHeight="26.0" prefWidth="232.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXDatePicker>
+      <Text layoutX="204.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <JFXComboBox labelFloat="true" layoutX="203.0" layoutY="515.0" prefHeight="25.0" prefWidth="104.0" promptText="Room Type Id">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXComboBox>
+      <TableView layoutX="150.0" layoutY="582.0" prefHeight="117.0" prefWidth="348.0">
+        <columns>
+          <TableColumn prefWidth="128.66668701171875" text="Type" />
+          <TableColumn prefWidth="121.33331298828125" text="Key-money" />
+            <TableColumn prefWidth="97.3333740234375" text="Qty" />
+        </columns>
+      </TableView>
+      <Text layoutX="555.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Id :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="63.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :">
+         <font>
+            <Font name="Constantia" size="16.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="649.0" layoutY="624.0" opacity="0.8" prefHeight="51.0" prefWidth="129.0" ripplerFill="#cc0fb2" style="-fx-background-color: blue; -fx-background-radius: 15;" text="Register" textFill="#f6f6f6" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text layoutX="530.0" layoutY="544.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="692.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time :">
+         <font>
+            <Font name="Constantia" size="16.0" />
+         </font>
+      </Text>
+      <JFXTextField layoutX="374.0" layoutY="203.0" prefHeight="25.0" prefWidth="232.0">
+         <font>
+            <Font name="Courier New" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField layoutX="374.0" layoutY="254.0" prefHeight="25.0" prefWidth="232.0">
+         <font>
+            <Font name="Courier New" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField layoutX="374.0" layoutY="307.0" prefHeight="25.0" prefWidth="232.0">
+         <font>
+            <Font name="Courier New" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField layoutX="374.0" layoutY="358.0" prefHeight="25.0" prefWidth="232.0">
+         <font>
+            <Font name="Courier New" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField layoutX="606.0" layoutY="525.0" prefHeight="25.0" prefWidth="232.0">
+         <font>
+            <Font name="Courier New" size="14.0" />
+         </font>
+      </JFXTextField>
+   </children>
 </AnchorPane>

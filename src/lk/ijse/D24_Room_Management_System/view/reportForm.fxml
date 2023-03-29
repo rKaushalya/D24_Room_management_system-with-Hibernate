@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.D24_Room_Management_System.controller.ReportFormController"
-            prefHeight="400.0" prefWidth="600.0">
+
+<AnchorPane opacity="0.07" prefHeight="802.0" prefWidth="912.0" style="-fx-background-color: linear-gradient(to right top, #5f27cd,#6c5ce7,#4834d4);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.ReportFormController">
 
 </AnchorPane>
