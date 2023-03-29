@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="759.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.RegisterRoomFormController">
    <children>
-      <Text fill="#575353" layoutX="340.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register Room" textAlignment="CENTER" wrappingWidth="231.94757080078125">
+      <Text fill="#2d60d7" layoutX="340.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register Room" textAlignment="CENTER" wrappingWidth="231.94757080078125">
          <font>
             <Font name="Georgia" size="35.0" />
          </font>

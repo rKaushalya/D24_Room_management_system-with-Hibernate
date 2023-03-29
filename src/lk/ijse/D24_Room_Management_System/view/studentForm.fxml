@@ -13,62 +13,62 @@
 
 <AnchorPane prefHeight="759.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.StudentFormController">
    <children>
-      <Text fill="#575353" layoutX="323.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Student" textAlignment="CENTER" wrappingWidth="265.94757080078125">
+      <Text fill="#2d60d7" layoutX="323.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Student" textAlignment="CENTER" wrappingWidth="265.94757080078125">
          <font>
             <Font name="Georgia" size="35.0" />
          </font>
       </Text>
-      <Text layoutX="214.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Id :">
+      <Text layoutX="216.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Id :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="213.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
+      <Text layoutX="215.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="213.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address :">
+      <Text layoutX="215.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="214.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No :">
+      <Text layoutX="216.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="213.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth :">
+      <Text layoutX="215.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="214.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender :">
+      <Text layoutX="216.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField layoutX="384.0" layoutY="213.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField layoutX="386.0" layoutY="176.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="384.0" layoutY="264.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField layoutX="386.0" layoutY="227.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="384.0" layoutY="317.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField layoutX="386.0" layoutY="280.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="384.0" layoutY="368.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField layoutX="386.0" layoutY="331.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <TableView layoutX="165.0" layoutY="547.0" prefHeight="117.0" prefWidth="662.0">
+      <TableView layoutX="167.0" layoutY="510.0" prefHeight="117.0" prefWidth="662.0">
          <columns>
             <TableColumn prefWidth="91.66665649414062" text="Student_Id" />
             <TableColumn prefWidth="142.66668701171875" text="Name" />
@@ -78,19 +78,19 @@
             <TableColumn prefWidth="95.33331298828125" text="Gender" />
          </columns>
       </TableView>
-      <JFXComboBox labelFloat="true" layoutX="384.0" layoutY="468.0" prefHeight="8.0" prefWidth="112.0">
+      <JFXComboBox labelFloat="true" layoutX="386.0" layoutY="431.0" prefHeight="8.0" prefWidth="112.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXComboBox>
-      <JFXButton layoutX="680.0" layoutY="264.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
+      <JFXButton layoutX="682.0" layoutY="227.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="680.0" layoutY="317.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: yellow; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Search" textFill="#2d1e1e" />
-      <JFXButton layoutX="680.0" layoutY="374.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea" />
-      <JFXTextField layoutX="384.0" layoutY="418.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXButton layoutX="682.0" layoutY="280.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: yellow; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Search" textFill="#2d1e1e" />
+      <JFXButton layoutX="682.0" layoutY="337.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea" />
+      <JFXTextField layoutX="386.0" layoutY="381.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
