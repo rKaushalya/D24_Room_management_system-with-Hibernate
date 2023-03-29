@@ -11,8 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.LoginFormController">
+<AnchorPane fx:id="pane" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.LoginFormController">
    <children>
       <ImageView fitHeight="188.0" fitWidth="172.0" layoutX="955.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -39,7 +38,7 @@
             <Image url="@assest/docs-illustration-1.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="865.0" layoutY="559.0" prefHeight="51.0" prefWidth="129.0" ripplerFill="#cc0fb2" style="-fx-background-color: #5f27cd; -fx-background-radius: 15;" text="Login" textFill="#f6f6f6" wrapText="true">
+      <JFXButton layoutX="865.0" layoutY="559.0" onAction="#loadDashBordOnAction" prefHeight="51.0" prefWidth="129.0" ripplerFill="#cc0fb2" style="-fx-background-color: #5f27cd; -fx-background-radius: 15;" text="Login" textFill="#f6f6f6" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>
@@ -47,14 +46,17 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Text fill="#555151" layoutX="671.0" layoutY="511.0" strokeWidth="0.0" text="Forget Password" wrappingWidth="97.0252685546875">
+      <JFXCheckBox layoutX="886.0" layoutY="499.0" text="Show Password">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXCheckBox>
+      <JFXButton layoutX="663.0" layoutY="494.0" onAction="#loadForgetOnAction" text="Forget Password ?">
          <font>
-            <Font name="Corbel Bold Italic" size="13.0" />
+            <Font name="System Bold Italic" size="13.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-      </Text>
-      <JFXCheckBox layoutX="886.0" layoutY="499.0" text="Show Password" />
+      </JFXButton>
    </children>
 </AnchorPane>
