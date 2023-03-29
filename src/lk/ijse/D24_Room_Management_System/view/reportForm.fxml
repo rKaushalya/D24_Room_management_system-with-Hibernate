@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
-<AnchorPane opacity="0.07" prefHeight="802.0" prefWidth="912.0" style="-fx-background-color: linear-gradient(to right top, #5f27cd,#6c5ce7,#4834d4);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.ReportFormController">
-
+<AnchorPane prefHeight="759.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.ReportFormController">
+   <children>
+      <Text fill="#2d60d7" layoutX="369.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report" textAlignment="CENTER" wrappingWidth="174.61419677734375">
+         <font>
+            <Font name="Georgia" size="35.0" />
+         </font>
+      </Text>
+   </children>
 </AnchorPane>
