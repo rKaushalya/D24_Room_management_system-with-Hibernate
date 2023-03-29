@@ -13,4 +13,8 @@ public class ForgetPasswordFormController {
     public void loadLoginForm(ActionEvent actionEvent) throws IOException {
         Navigation.navigate(Routes.LOGIN,pane);
     }
+
+    public void loadLoginFormOnAction(ActionEvent actionEvent) throws IOException {
+        Navigation.navigate(Routes.LOGIN,pane);
+    }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="759.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.ReportFormController">
    <children>
@@ -12,5 +12,6 @@
             <Font name="Georgia" size="35.0" />
          </font>
       </Text>
+      <JFXButton layoutX="213.0" layoutY="249.0" text="Student Report" />
    </children>
 </AnchorPane>

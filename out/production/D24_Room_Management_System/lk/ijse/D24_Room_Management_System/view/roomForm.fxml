@@ -10,47 +10,47 @@
 
 <AnchorPane prefHeight="759.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.RoomFormController">
    <children>
-      <Text layoutX="226.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type Id :">
+      <Text layoutX="197.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type Id :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="225.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type :">
+      <Text layoutX="197.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="225.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Key Money :">
+      <Text layoutX="198.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Key Money :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="226.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty :">
+      <Text layoutX="198.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField layoutX="397.0" layoutY="185.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField layoutX="397.0" layoutY="171.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="397.0" layoutY="237.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField layoutX="397.0" layoutY="236.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="396.0" layoutY="290.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField layoutX="396.0" layoutY="294.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="396.0" layoutY="341.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField layoutX="397.0" layoutY="355.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <TableView layoutX="207.0" layoutY="505.0" prefHeight="146.0" prefWidth="498.0">
+      <TableView layoutX="190.0" layoutY="541.0" prefHeight="146.0" prefWidth="498.0">
          <columns>
             <TableColumn prefWidth="114.66668701171875" text="Room Type Id" />
             <TableColumn prefWidth="143.33331298828125" text="Type" />
@@ -58,19 +58,19 @@
             <TableColumn prefWidth="97.3333740234375" text="Qty" />
          </columns>
       </TableView>
-      <JFXButton layoutX="333.0" layoutY="416.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
+      <JFXButton layoutX="321.0" layoutY="443.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="459.0" layoutY="416.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: yellow; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Search" textFill="#2d1e1e" />
-      <JFXButton layoutX="588.0" layoutY="416.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea" />
+      <JFXButton layoutX="447.0" layoutY="443.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: yellow; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Search" textFill="#2d1e1e" />
+      <JFXButton layoutX="576.0" layoutY="443.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea" />
       <Text fill="#2d60d7" layoutX="333.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Room" textAlignment="CENTER" wrappingWidth="265.94757080078125">
          <font>
             <Font name="Georgia" size="35.0" />
          </font>
       </Text>
-      <JFXButton layoutX="209.0" layoutY="416.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: blue; -fx-background-radius: 10; -fx-border-radius: 10;" text="Add" textFill="#ebdddd">
+      <JFXButton layoutX="197.0" layoutY="443.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: blue; -fx-background-radius: 10; -fx-border-radius: 10;" text="Add" textFill="#ebdddd">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
