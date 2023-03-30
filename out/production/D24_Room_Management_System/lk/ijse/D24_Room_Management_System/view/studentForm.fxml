@@ -82,13 +82,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXComboBox>
-      <JFXButton layoutX="661.0" layoutY="228.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
+      <JFXButton layoutX="661.0" layoutY="215.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
       <JFXButton layoutX="661.0" layoutY="281.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: yellow; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Search" textFill="#2d1e1e" />
-      <JFXButton layoutX="661.0" layoutY="338.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea" />
+      <JFXButton layoutX="661.0" layoutY="351.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea" />
       <JFXTextField layoutX="361.0" layoutY="394.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
