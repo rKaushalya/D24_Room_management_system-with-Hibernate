@@ -11,12 +11,16 @@ import org.hibernate.Transaction;
 
 public class EmployeeBOImpl implements EmployeeBO {
 
-    private final Session session = FactoryConfiguration.getInstance().getSession();
     private final EmployeeDAO empDAO = (EmployeeDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.Types.EMPLOYEE);
 
+    @Override
+    public Session getSession() {
+        return FactoryConfiguration.getInstance().getSession();
+    }
 
     @Override
     public boolean saveEmployee(EmployeeDTO employeeDTO) {
+        Session session = getSession();
         Transaction transaction = session.beginTransaction();
         try{
             empDAO.setSession(session);
@@ -31,6 +35,26 @@ public class EmployeeBOImpl implements EmployeeBO {
             e.printStackTrace();
             System.out.println(e);
             return false;
+        }
+    }
+
+    @Override
+    public boolean updateCustomer(EmployeeDTO employeeDTO) {
+        return false;
+    }
+
+    @Override
+    public EmployeeDTO searchEmployee(String id) {
+        try{
+            Session session = getSession();
+            empDAO.setSession(session);
+            Employee emp = empDAO.get(id);
+            session.close();
+            return new EmployeeDTO(emp.getEId(),emp.getName(),emp.getAddress(),emp.getContact(),emp.getRole());
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println(e);
+            return null;
         }
     }
 }

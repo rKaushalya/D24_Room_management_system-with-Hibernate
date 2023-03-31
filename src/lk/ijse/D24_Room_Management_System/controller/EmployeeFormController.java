@@ -49,6 +49,17 @@ public class EmployeeFormController {
     }
 
     public void searchOnAction(ActionEvent actionEvent) {
+        try {
+            EmployeeDTO employeeDTO = empBO.searchEmployee(txtId.getText());
+            txtId.setText(employeeDTO.getEId());
+            txtName.setText(employeeDTO.getName());
+            txtAddress.setText(employeeDTO.getAddress());
+            txtContact.setText(employeeDTO.getContact());
+            txtRole.setText(employeeDTO.getRole());
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,"Wrong Id.!").show();
+            System.out.println(e);
+        }
     }
 
     public void deleteOnAction(ActionEvent actionEvent) {

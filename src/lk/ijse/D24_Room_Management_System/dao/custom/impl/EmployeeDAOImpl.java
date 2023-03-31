@@ -4,8 +4,6 @@ import lk.ijse.D24_Room_Management_System.dao.custom.EmployeeDAO;
 import lk.ijse.D24_Room_Management_System.entity.Employee;
 import org.hibernate.Session;
 
-import java.io.Serializable;
-
 public class EmployeeDAOImpl implements EmployeeDAO {
 
     private Session session;
@@ -27,8 +25,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public Employee get(String s) {
-        return null;
+    public Employee get(String id) {
+        return session.get(Employee.class, id);
     }
 
     @Override
