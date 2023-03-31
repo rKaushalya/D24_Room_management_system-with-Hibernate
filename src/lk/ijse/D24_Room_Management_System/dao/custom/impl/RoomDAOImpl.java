@@ -1,4 +1,6 @@
 package lk.ijse.D24_Room_Management_System.dao.custom.impl;
 
-public class RoomDAOImpl {
+import lk.ijse.D24_Room_Management_System.dao.custom.RoomDAO;
+
+public class RoomDAOImpl implements RoomDAO {
 }

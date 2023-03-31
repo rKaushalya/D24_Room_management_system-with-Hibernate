@@ -1,4 +1,6 @@
 package lk.ijse.D24_Room_Management_System.dao.custom;
 
-public interface StudentDAO {
+import lk.ijse.D24_Room_Management_System.dao.CrudDAO;
+
+public interface StudentDAO extends CrudDAO {
 }

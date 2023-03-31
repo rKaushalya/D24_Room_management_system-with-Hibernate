@@ -1,4 +1,6 @@
 package lk.ijse.D24_Room_Management_System.bo.custom;
 
-public interface RoomBO {
+import lk.ijse.D24_Room_Management_System.bo.SuperBO;
+
+public interface RoomBO extends SuperBO {
 }
