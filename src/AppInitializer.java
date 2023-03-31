@@ -17,19 +17,19 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        primaryStage.setScene(new Scene(FXMLLoader.load(getClass()
+        /*primaryStage.setScene(new Scene(FXMLLoader.load(getClass()
                 .getResource("lk/ijse/D24_Room_Management_System/view/loginForm.fxml"))));
         primaryStage.setTitle("Login Form");
         primaryStage.centerOnScreen();
-        primaryStage.show();
+        primaryStage.show();*/
 
-        /*Student student = new Student("s001","Ravindu","Galle","119","2012-07-12","Male");
+//        Student student = new Student("s001","Ravindu","Galle","119","2012-07-12","Male");
 
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        session.save(student);
+//        session.save(student);
         transaction.commit();
-        session.close();*/
+        session.close();
     }
 }
