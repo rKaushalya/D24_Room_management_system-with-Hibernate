@@ -16,7 +16,7 @@ public class DAOFactory {
         return (daoFactory == null) ? daoFactory = new DAOFactory() : daoFactory;
     }
 
-    enum Types{
+    public enum Types{
         ROOM,RESERVATION,STUDENT,EMPLOYEE
     }
 

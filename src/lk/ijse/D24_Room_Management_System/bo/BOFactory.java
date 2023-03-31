@@ -16,7 +16,7 @@ public class BOFactory {
         return (boFactory == null) ? boFactory = new BOFactory() : boFactory;
     }
 
-    enum Types{
+    public enum Types{
         STUDENT,ROOM,RESERVATION,EMPLOYEE
     }
 

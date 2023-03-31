@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -30,22 +31,22 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField layoutX="406.0" layoutY="171.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtId" layoutX="406.0" layoutY="171.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="401.0" layoutY="232.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtName" layoutX="401.0" layoutY="232.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="401.0" layoutY="299.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtAddress" layoutX="401.0" layoutY="299.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="401.0" layoutY="363.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtContact" layoutX="401.0" layoutY="363.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
@@ -59,19 +60,19 @@
             <TableColumn prefWidth="97.33331298828125" text="Role" />
          </columns>
       </TableView>
-      <JFXButton layoutX="350.0" layoutY="501.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
+      <JFXButton layoutX="350.0" layoutY="501.0" onAction="#updateOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="476.0" layoutY="501.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: yellow; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Search" textFill="#2d1e1e" />
-      <JFXButton layoutX="605.0" layoutY="501.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea" />
+      <JFXButton layoutX="476.0" layoutY="501.0" onAction="#searchOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: yellow; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Search" textFill="#2d1e1e" />
+      <JFXButton layoutX="605.0" layoutY="501.0" onAction="#deleteOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea" />
       <Text fill="#2d60d7" layoutX="320.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Employee" textAlignment="CENTER" wrappingWidth="297.94757080078125">
          <font>
             <Font name="Georgia" size="35.0" />
          </font>
       </Text>
-      <JFXButton layoutX="226.0" layoutY="501.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: blue; -fx-background-radius: 10; -fx-border-radius: 10;" text="Add" textFill="#ebdddd">
+      <JFXButton layoutX="226.0" layoutY="501.0" onAction="#addOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: blue; -fx-background-radius: 10; -fx-border-radius: 10;" text="Add" textFill="#ebdddd">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -81,10 +82,11 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField layoutX="401.0" layoutY="424.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtRole" layoutX="511.0" layoutY="424.0" prefHeight="26.0" prefWidth="122.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
+      <JFXComboBox fx:id="cmbRole" layoutX="401.0" layoutY="425.0" prefHeight="25.0" prefWidth="88.0" />
    </children>
 </AnchorPane>
