@@ -46,6 +46,18 @@ public class EmployeeFormController {
     }
 
     public void updateOnAction(ActionEvent actionEvent) {
+        EmployeeDTO empDTO = empBO.searchEmployee(txtId.getText());
+        empDTO.setName(txtName.getText());
+        empDTO.setAddress(txtAddress.getText());
+        empDTO.setContact(txtContact.getText());
+        empDTO.setRole((String) cmbRole.getValue());
+
+        boolean update = empBO.updateCustomer(empDTO);
+        if (update){
+            new Alert(Alert.AlertType.CONFIRMATION, "Update Success..").show();
+        }else {
+            new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
+        }
     }
 
     public void searchOnAction(ActionEvent actionEvent) {

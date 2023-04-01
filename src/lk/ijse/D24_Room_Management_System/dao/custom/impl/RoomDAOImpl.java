@@ -12,13 +12,13 @@ public class RoomDAOImpl implements RoomDAO {
 
 
     @Override
-    public String save(Room object) {
-        return null;
+    public boolean save(Room object) {
+        return false;
     }
 
     @Override
-    public void update(Room object) {
-
+    public boolean update(Room object) {
+        return false;
     }
 
     @Override

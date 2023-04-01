@@ -24,11 +24,11 @@ public class EmployeeBOImpl implements EmployeeBO {
         Transaction transaction = session.beginTransaction();
         try{
             empDAO.setSession(session);
-            String save = empDAO.save(new Employee(employeeDTO.getEId(), employeeDTO.getName(), employeeDTO.getAddress(),
+            boolean save = empDAO.save(new Employee(employeeDTO.getEId(), employeeDTO.getName(), employeeDTO.getAddress(),
                     employeeDTO.getContact(), employeeDTO.getRole()));
             transaction.commit();
             session.close();
-            return save.equals("ADD");
+            return save;
         }catch (Exception e){
             transaction.rollback();
             session.close();
@@ -40,7 +40,20 @@ public class EmployeeBOImpl implements EmployeeBO {
 
     @Override
     public boolean updateCustomer(EmployeeDTO employeeDTO) {
-        return false;
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            empDAO.setSession(session);
+            boolean update = empDAO.update(new Employee(employeeDTO.getEId(),employeeDTO.getName(),
+                    employeeDTO.getAddress(),employeeDTO.getContact(),employeeDTO.getRole()));
+            transaction.commit();
+            session.close();
+            return update;
+        }catch (Exception e){
+            transaction.rollback();
+            session.close();
+            return false;
+        }
     }
 
     @Override

@@ -4,6 +4,8 @@ import lk.ijse.D24_Room_Management_System.dao.custom.EmployeeDAO;
 import lk.ijse.D24_Room_Management_System.entity.Employee;
 import org.hibernate.Session;
 
+import java.io.Serializable;
+
 public class EmployeeDAOImpl implements EmployeeDAO {
 
     private Session session;
@@ -14,14 +16,23 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public String save(Employee employee) {
-        String save = (String) session.save(employee);
-        return "ADD";
+    public boolean save(Employee employee) {
+        if (employee != null) {
+            session.save(employee);
+            return true;
+        }else {
+            return false;
+        }
     }
 
     @Override
-    public void update(Employee object) {
-
+    public boolean update(Employee employee) {
+        if (employee != null) {
+            session.update(employee);
+            return true;
+        }else {
+            return false;
+        }
     }
 
     @Override

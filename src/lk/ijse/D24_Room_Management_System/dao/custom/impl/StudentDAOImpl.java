@@ -12,13 +12,13 @@ public class StudentDAOImpl implements StudentDAO {
 
 
     @Override
-    public String save(Student object) {
-        return null;
+    public boolean save(Student object) {
+        return false;
     }
 
     @Override
-    public void update(Student object) {
-
+    public boolean update(Student object) {
+        return false;
     }
 
     @Override
