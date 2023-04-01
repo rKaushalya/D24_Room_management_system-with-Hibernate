@@ -31,22 +31,22 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="txtId" layoutX="406.0" layoutY="171.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtId" layoutX="406.0" layoutY="171.0" onAction="#slipToName" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtName" layoutX="401.0" layoutY="232.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtName" layoutX="401.0" layoutY="232.0" onAction="#slipToAddress" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtAddress" layoutX="401.0" layoutY="299.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtAddress" layoutX="401.0" layoutY="299.0" onAction="#slipToContact" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtContact" layoutX="401.0" layoutY="363.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtContact" layoutX="401.0" layoutY="363.0" onAction="#slipToRole" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>

@@ -1,9 +1,6 @@
 package lk.ijse.D24_Room_Management_System.dao;
 
-import lk.ijse.D24_Room_Management_System.dao.custom.impl.EmployeeDAOImpl;
-import lk.ijse.D24_Room_Management_System.dao.custom.impl.ReservationDAOImpl;
-import lk.ijse.D24_Room_Management_System.dao.custom.impl.RoomDAOImpl;
-import lk.ijse.D24_Room_Management_System.dao.custom.impl.StudentDAOImpl;
+import lk.ijse.D24_Room_Management_System.dao.custom.impl.*;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
@@ -17,7 +14,7 @@ public class DAOFactory {
     }
 
     public enum Types{
-        ROOM,RESERVATION,STUDENT,EMPLOYEE
+        ROOM,RESERVATION,STUDENT,EMPLOYEE,USER
     }
 
     public SuperDAO getDAO(Types types){
@@ -30,6 +27,8 @@ public class DAOFactory {
                 return new EmployeeDAOImpl();
             case ROOM:
                 return new RoomDAOImpl();
+            case USER:
+                return new UserDAOImpl();
             default:
                 return null;
         }

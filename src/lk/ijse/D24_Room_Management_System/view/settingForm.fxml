@@ -24,12 +24,12 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField layoutX="369.0" layoutY="148.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtId" layoutX="369.0" layoutY="148.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="369.0" layoutY="213.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtName" layoutX="369.0" layoutY="213.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
@@ -44,7 +44,7 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField layoutX="369.0" layoutY="283.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtEmail" layoutX="369.0" layoutY="283.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
@@ -54,23 +54,23 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXPasswordField layoutX="369.0" layoutY="347.0" prefHeight="27.0" prefWidth="232.0" />
+      <JFXPasswordField fx:id="txtPassword" layoutX="369.0" layoutY="347.0" prefHeight="27.0" prefWidth="232.0" />
       <Text layoutX="169.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conform Password :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXPasswordField layoutX="369.0" layoutY="409.0" prefHeight="27.0" prefWidth="232.0" />
+      <JFXPasswordField fx:id="txtCMPassword" layoutX="369.0" layoutY="409.0" prefHeight="27.0" prefWidth="232.0" />
       <Text layoutX="169.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXComboBox layoutX="369.0" layoutY="474.0" prefHeight="27.0" prefWidth="118.0">
+      <JFXComboBox fx:id="cmbRole" layoutX="369.0" layoutY="474.0" prefHeight="27.0" prefWidth="118.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXComboBox>
-      <JFXCheckBox layoutX="531.0" layoutY="478.0" text="Show Password">
+      <JFXCheckBox layoutX="531.0" layoutY="478.0" onAction="#showPWOnAction" text="Show Password">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -83,7 +83,7 @@
             <TableColumn prefWidth="117.0" text="Role" />
          </columns>
       </TableView>
-      <JFXButton layoutX="676.0" layoutY="296.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
+      <JFXButton layoutX="676.0" layoutY="296.0" onAction="#updateOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -91,11 +91,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="676.0" layoutY="382.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea">
+      <JFXButton layoutX="676.0" layoutY="382.0" onAction="#deleteOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
-      <JFXButton layoutX="676.0" layoutY="211.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: blue; -fx-background-radius: 10; -fx-border-radius: 10;" text="Add" textFill="#ebdddd">
+      <JFXButton layoutX="676.0" layoutY="211.0" onAction="#addOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: blue; -fx-background-radius: 10; -fx-border-radius: 10;" text="Add" textFill="#ebdddd">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

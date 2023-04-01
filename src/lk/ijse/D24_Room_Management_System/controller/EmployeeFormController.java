@@ -7,6 +7,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
 import lk.ijse.D24_Room_Management_System.bo.SuperBO;
 import lk.ijse.D24_Room_Management_System.bo.custom.EmployeeBO;
@@ -20,6 +22,12 @@ public class EmployeeFormController {
     public JFXTextField txtRole;
 
     private final EmployeeBO empBO = (EmployeeBO) BOFactory.getBoFactory().getBO(BOFactory.Types.EMPLOYEE);
+    public TableView tblEmployee;
+    public TableColumn cmbId;
+    public TableColumn cmbName;
+    public TableColumn cmbAddress;
+    public TableColumn cmbContact;
+    public TableColumn cmbRole;
 
     public void initialize(){
     }
@@ -35,11 +43,14 @@ public class EmployeeFormController {
             boolean add = empBO.saveEmployee(new EmployeeDTO(txtId.getText(), txtName.getText(), txtAddress.getText(),
                     txtContact.getText(), txtRole.getText()));
             if (add){
+                clearText();
                 new Alert(Alert.AlertType.CONFIRMATION,"Employee added Success..").show();
             }else {
+                clearText();
                 new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
             }
         }catch (Exception e){
+            clearText();
             System.out.println(e);
         }
     }
@@ -53,8 +64,10 @@ public class EmployeeFormController {
 
         boolean update = empBO.updateCustomer(empDTO);
         if (update){
+            clearText();
             new Alert(Alert.AlertType.CONFIRMATION, "Update Success..").show();
         }else {
+            clearText();
             new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
         }
     }
@@ -77,9 +90,35 @@ public class EmployeeFormController {
         EmployeeDTO employeeDTO = empBO.searchEmployee(txtId.getText());
         boolean delete = empBO.deleteCustomer(employeeDTO);
         if (delete){
+            clearText();
             new Alert(Alert.AlertType.CONFIRMATION, "Delete success..").show();
         }else {
+            clearText();
             new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
         }
+    }
+
+    private void clearText(){
+        txtId.clear();
+        txtName.clear();
+        txtAddress.clear();
+        txtContact.clear();
+        txtRole.clear();
+    }
+
+    public void slipToName(ActionEvent actionEvent) {
+        txtName.requestFocus();
+    }
+
+    public void slipToAddress(ActionEvent actionEvent) {
+        txtAddress.requestFocus();
+    }
+
+    public void slipToContact(ActionEvent actionEvent) {
+        txtContact.requestFocus();
+    }
+
+    public void slipToRole(ActionEvent actionEvent) {
+        txtRole.requestFocus();
     }
 }
