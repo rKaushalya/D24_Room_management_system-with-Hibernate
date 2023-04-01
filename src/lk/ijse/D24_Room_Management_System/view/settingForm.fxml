@@ -1,8 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
 <AnchorPane prefHeight="759.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.SettingFormController">
-
+   <children>
+      <Text layoutX="169.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Id :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="169.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <JFXTextField layoutX="369.0" layoutY="148.0" prefHeight="25.0" prefWidth="232.0">
+         <font>
+            <Font name="Courier New" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField layoutX="369.0" layoutY="213.0" prefHeight="25.0" prefWidth="232.0">
+         <font>
+            <Font name="Courier New" size="14.0" />
+         </font>
+      </JFXTextField>
+      <Text fill="#2d60d7" layoutX="275.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage User" textAlignment="CENTER" wrappingWidth="265.94757080078125">
+         <font>
+            <Font name="Georgia" size="35.0" />
+         </font>
+      </Text>
+      <Text layoutX="169.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <JFXTextField layoutX="369.0" layoutY="283.0" prefHeight="25.0" prefWidth="232.0">
+         <font>
+            <Font name="Courier New" size="14.0" />
+         </font>
+      </JFXTextField>
+      <Text layoutX="170.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <JFXPasswordField layoutX="369.0" layoutY="347.0" prefHeight="27.0" prefWidth="232.0" />
+      <Text layoutX="169.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conform Password :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <JFXPasswordField layoutX="369.0" layoutY="409.0" prefHeight="27.0" prefWidth="232.0" />
+      <Text layoutX="169.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <JFXComboBox layoutX="369.0" layoutY="474.0" prefHeight="27.0" prefWidth="118.0" />
+      <JFXCheckBox layoutX="531.0" layoutY="478.0" text="Show Password">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXCheckBox>
+      <TableView layoutX="155.0" layoutY="557.0" prefHeight="146.0" prefWidth="547.0">
+         <columns>
+            <TableColumn prefWidth="96.33331298828125" text="User Id" />
+            <TableColumn prefWidth="140.0" text="Name" />
+            <TableColumn prefWidth="192.0" text="Email" />
+            <TableColumn prefWidth="117.0" text="Role" />
+         </columns>
+      </TableView>
+      <JFXButton layoutX="676.0" layoutY="296.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="676.0" layoutY="382.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea" />
+      <JFXButton layoutX="676.0" layoutY="211.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: blue; -fx-background-radius: 10; -fx-border-radius: 10;" text="Add" textFill="#ebdddd">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
 </AnchorPane>

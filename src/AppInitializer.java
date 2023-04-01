@@ -22,14 +22,5 @@ public class AppInitializer extends Application {
         primaryStage.setTitle("Login Form");
         primaryStage.centerOnScreen();
         primaryStage.show();
-
-//        Student student = new Student("s001","Ravindu","Galle","119","2012-07-12","Male");
-
-    /*    Session session = FactoryConfiguration.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
-
-//        session.save(student);
-        transaction.commit();
-        session.close();*/
     }
 }
