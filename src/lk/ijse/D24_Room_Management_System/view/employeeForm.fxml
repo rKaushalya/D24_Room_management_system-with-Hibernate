@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,22 +33,22 @@
       </Text>
       <JFXTextField fx:id="txtId" layoutX="406.0" layoutY="171.0" prefHeight="25.0" prefWidth="232.0">
          <font>
-            <Font name="Courier New" size="14.0" />
+            <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
       <JFXTextField fx:id="txtName" layoutX="401.0" layoutY="232.0" prefHeight="25.0" prefWidth="232.0">
          <font>
-            <Font name="Courier New" size="14.0" />
+            <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
       <JFXTextField fx:id="txtAddress" layoutX="401.0" layoutY="299.0" prefHeight="25.0" prefWidth="232.0">
          <font>
-            <Font name="Courier New" size="14.0" />
+            <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
       <JFXTextField fx:id="txtContact" layoutX="401.0" layoutY="363.0" prefHeight="25.0" prefWidth="232.0">
          <font>
-            <Font name="Courier New" size="14.0" />
+            <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
       <TableView layoutX="174.0" layoutY="570.0" prefHeight="146.0" prefWidth="604.0">
@@ -64,9 +64,18 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
-      <JFXButton layoutX="476.0" layoutY="501.0" onAction="#searchOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: yellow; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Search" textFill="#2d1e1e" />
-      <JFXButton layoutX="605.0" layoutY="501.0" onAction="#deleteOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea" />
+      <JFXButton layoutX="476.0" layoutY="501.0" onAction="#searchOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: yellow; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Search" textFill="#2d1e1e">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton layoutX="605.0" layoutY="501.0" onAction="#deleteOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
       <Text fill="#2d60d7" layoutX="320.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Employee" textAlignment="CENTER" wrappingWidth="297.94757080078125">
          <font>
             <Font name="Georgia" size="35.0" />
@@ -76,17 +85,19 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <Text layoutX="205.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="txtRole" layoutX="511.0" layoutY="424.0" prefHeight="26.0" prefWidth="122.0">
+      <JFXTextField fx:id="txtRole" layoutX="401.0" layoutY="424.0" prefHeight="25.0" prefWidth="232.0">
          <font>
-            <Font name="Courier New" size="14.0" />
+            <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXComboBox fx:id="cmbRole" layoutX="401.0" layoutY="425.0" prefHeight="25.0" prefWidth="88.0" />
    </children>
 </AnchorPane>

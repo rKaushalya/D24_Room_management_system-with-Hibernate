@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
 import lk.ijse.D24_Room_Management_System.bo.SuperBO;
 import lk.ijse.D24_Room_Management_System.bo.custom.EmployeeBO;
@@ -17,24 +18,22 @@ public class EmployeeFormController {
     public JFXTextField txtAddress;
     public JFXTextField txtContact;
     public JFXTextField txtRole;
-    public JFXComboBox cmbRole;
 
     private final EmployeeBO empBO = (EmployeeBO) BOFactory.getBoFactory().getBO(BOFactory.Types.EMPLOYEE);
 
     public void initialize(){
-        loadRole();
     }
 
-    private void loadRole(){
+   /* private void loadRole(){
         ObservableList<String> role = FXCollections.observableArrayList();
-        role.addAll("Admin","Reception");
+        role.addAll("Reception","Cleaner", "Security");
         cmbRole.setItems(role);
-    }
+    }*/
 
     public void addOnAction(ActionEvent actionEvent) {
         try {
             boolean add = empBO.saveEmployee(new EmployeeDTO(txtId.getText(), txtName.getText(), txtAddress.getText(),
-                    txtContact.getText(), (String) cmbRole.getValue()));
+                    txtContact.getText(), txtRole.getText()));
             if (add){
                 new Alert(Alert.AlertType.CONFIRMATION,"Employee added Success..").show();
             }else {
@@ -50,7 +49,7 @@ public class EmployeeFormController {
         empDTO.setName(txtName.getText());
         empDTO.setAddress(txtAddress.getText());
         empDTO.setContact(txtContact.getText());
-        empDTO.setRole((String) cmbRole.getValue());
+        empDTO.setRole(txtRole.getText());
 
         boolean update = empBO.updateCustomer(empDTO);
         if (update){

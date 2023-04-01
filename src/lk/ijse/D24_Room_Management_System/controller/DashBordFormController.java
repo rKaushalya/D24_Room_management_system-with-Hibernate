@@ -46,4 +46,8 @@ public class DashBordFormController {
     public void loadReportOnAction(ActionEvent actionEvent) throws IOException {
         setUi("/lk/ijse/D24_Room_Management_System/view/reportForm.fxml");
     }
+
+    public void openSettingPAgeOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("/lk/ijse/D24_Room_Management_System/view/settingForm.fxml");
+    }
 }

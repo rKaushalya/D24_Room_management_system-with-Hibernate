@@ -80,10 +80,25 @@
             <Font name="Constantia" size="16.0" />
          </font>
       </Text>
-      <Text layoutX="969.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time :">
+      <Text layoutX="910.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time :">
          <font>
             <Font name="Constantia" size="16.0" />
          </font>
       </Text>
+      <JFXButton layoutX="1084.0" layoutY="2.0" onAction="#openSettingPAgeOnAction" prefHeight="25.0" prefWidth="102.0" text="Setting">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assest/icons8-settings-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
    </children>
 </AnchorPane>
