@@ -75,5 +75,12 @@ public class EmployeeFormController {
     }
 
     public void deleteOnAction(ActionEvent actionEvent) {
+        EmployeeDTO employeeDTO = empBO.searchEmployee(txtId.getText());
+        boolean delete = empBO.deleteCustomer(employeeDTO);
+        if (delete){
+            new Alert(Alert.AlertType.CONFIRMATION, "Delete success..").show();
+        }else {
+            new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
+        }
     }
 }

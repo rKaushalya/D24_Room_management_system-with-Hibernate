@@ -41,7 +41,12 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public void delete(Employee object) {
-
+    public boolean delete(Employee employee) {
+        if (employee != null){
+            session.delete(employee);
+            return true;
+        }else {
+            return false;
+        }
     }
 }

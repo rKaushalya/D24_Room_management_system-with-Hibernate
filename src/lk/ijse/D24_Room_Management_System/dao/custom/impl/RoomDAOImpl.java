@@ -27,7 +27,7 @@ public class RoomDAOImpl implements RoomDAO {
     }
 
     @Override
-    public void delete(Room object) {
-
+    public boolean delete(Room object) {
+        return false;
     }
 }

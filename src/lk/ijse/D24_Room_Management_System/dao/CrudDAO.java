@@ -8,5 +8,5 @@ public interface CrudDAO<T, ID> extends SuperDAO{
 
     T get(ID id);
 
-    void delete(T object);
+    boolean delete(T object);
 }

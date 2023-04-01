@@ -9,4 +9,6 @@ public interface EmployeeBO extends SuperBO {
     boolean updateCustomer(EmployeeDTO employeeDTO);
 
     EmployeeDTO searchEmployee(String id);
+
+    boolean deleteCustomer(EmployeeDTO employeeDTO);
 }

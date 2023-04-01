@@ -27,7 +27,7 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public void delete(Student object) {
-
+    public boolean delete(Student object) {
+        return false;
     }
 }

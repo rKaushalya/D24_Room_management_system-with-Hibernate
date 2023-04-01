@@ -50,6 +50,7 @@ public class EmployeeBOImpl implements EmployeeBO {
             session.close();
             return update;
         }catch (Exception e){
+            System.out.println(e);
             transaction.rollback();
             session.close();
             return false;
@@ -68,6 +69,25 @@ public class EmployeeBOImpl implements EmployeeBO {
             e.printStackTrace();
             System.out.println(e);
             return null;
+        }
+    }
+
+    @Override
+    public boolean deleteCustomer(EmployeeDTO empDTO) {
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            empDAO.setSession(session);
+            boolean delete = empDAO.delete(new Employee(empDTO.getEId(), empDTO.getName(), empDTO.getAddress(),
+                    empDTO.getContact(), empDTO.getRole()));
+            transaction.commit();
+            session.close();
+            return delete;
+        }catch (Exception e){
+            System.out.println(e);
+            transaction.rollback();
+            session.close();
+            return false;
         }
     }
 }
