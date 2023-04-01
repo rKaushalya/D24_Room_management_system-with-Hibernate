@@ -1,9 +1,6 @@
 package lk.ijse.D24_Room_Management_System.util;
 
-import lk.ijse.D24_Room_Management_System.entity.Employee;
-import lk.ijse.D24_Room_Management_System.entity.Reservation;
-import lk.ijse.D24_Room_Management_System.entity.Room;
-import lk.ijse.D24_Room_Management_System.entity.Student;
+import lk.ijse.D24_Room_Management_System.entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -19,6 +16,7 @@ public class FactoryConfiguration {
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Room.class)
                 .addAnnotatedClass(Reservation.class)
+                .addAnnotatedClass(User.class)
                 .buildSessionFactory();
     }
 
