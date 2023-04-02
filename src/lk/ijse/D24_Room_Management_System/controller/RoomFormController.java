@@ -23,7 +23,7 @@ public class RoomFormController {
     private final RoomBO roomBo = (RoomBO) BOFactory.getBoFactory().getBO(BOFactory.Types.ROOM);
 
     public void addOnAction(ActionEvent actionEvent) {
-        boolean add = roomBo.addRoom(new RoomDTO(txtId.getId(), txtName.getText(), txtMoney.getText(),
+        boolean add = roomBo.addRoom(new RoomDTO(txtId.getText(), txtName.getText(), txtMoney.getText(),
                 Integer.parseInt(txtQty.getText())));
         if (add){
             new Alert(Alert.AlertType.CONFIRMATION, "Room Added Success..").show();

@@ -44,6 +44,7 @@ public class RoomBOImpl implements RoomBO {
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
         try {
+            roomDAO.setSession(session);
             boolean delete = roomDAO.delete(new Room(dto.getRId(), dto.getType(),
                     dto.getKeyMoney(), dto.getQty()));
             transaction.commit();
