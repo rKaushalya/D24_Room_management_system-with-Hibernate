@@ -1,5 +1,6 @@
 package lk.ijse.D24_Room_Management_System.bo.custom.impl;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import lk.ijse.D24_Room_Management_System.bo.custom.UserBO;
 import lk.ijse.D24_Room_Management_System.dao.DAOFactory;
@@ -10,6 +11,8 @@ import lk.ijse.D24_Room_Management_System.util.FactoryConfiguration;
 import lk.ijse.D24_Room_Management_System.view.tdm.UserTDM;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import java.util.List;
 
 public class UserBOImpl implements UserBO {
     private final UserDAO userDAO = (UserDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.Types.USER);
@@ -94,6 +97,15 @@ public class UserBOImpl implements UserBO {
 
     @Override
     public ObservableList<UserTDM> getAllUser() {
-        return null;
+        Session session = getSession();
+        ObservableList<UserTDM> users = FXCollections.observableArrayList();
+        userDAO.setSession(session);
+        List<User> allUser = userDAO.getAllUser();
+
+        for (User user : allUser) {
+            users.add(new UserTDM(user.getUId(),user.getName(),user.getEmail(),
+                    user.getPassword(),user.getRole()));
+        }
+        return users;
     }
 }

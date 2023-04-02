@@ -1,5 +1,6 @@
 package lk.ijse.D24_Room_Management_System.controller;
 
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -7,12 +8,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.SortEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
 import lk.ijse.D24_Room_Management_System.bo.SuperBO;
 import lk.ijse.D24_Room_Management_System.bo.custom.UserBO;
 import lk.ijse.D24_Room_Management_System.dto.UserDTO;
+import lk.ijse.D24_Room_Management_System.view.tdm.UserTDM;
 
 public class SettingFormController {
     public JFXTextField txtId;
@@ -26,10 +31,14 @@ public class SettingFormController {
     public TableColumn clmEmail;
     public TableColumn clmRole;
     public JFXComboBox cmbRole;
+    public JFXCheckBox cbxShowPW;
 
     private final UserBO userBO = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.Types.USER);
 
+
     public void initialize(){
+        getAllUser();
+        setCellValue();
         loadRole();
     }
 
@@ -44,6 +53,7 @@ public class SettingFormController {
                 txtEmail.getText(),txtPassword.getText(), (String) cmbRole.getValue()));
         if (add){
             clearText();
+            getAllUser();
             new Alert(Alert.AlertType.CONFIRMATION, "User Added Success..").show();
         }else {
             clearText();
@@ -61,6 +71,7 @@ public class SettingFormController {
         boolean update = userBO.updateUser(userDTO);
         if (update){
             clearText();
+            getAllUser();
             new Alert(Alert.AlertType.CONFIRMATION, "Update Success..").show();
         }else {
             clearText();
@@ -73,10 +84,20 @@ public class SettingFormController {
         boolean delete = userBO.deleteUser(userDTO);
         if (delete){
             clearText();
+            getAllUser();
             new Alert(Alert.AlertType.CONFIRMATION, "Delete Success..").show();
         }else {
             clearText();
             new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
+        }
+    }
+
+    private void getAllUser(){
+        try {
+            ObservableList<UserTDM> allUser = userBO.getAllUser();
+            tblUser.setItems(allUser);
+        }catch (Exception e){
+            System.out.println(e);
         }
     }
 
@@ -89,5 +110,21 @@ public class SettingFormController {
         txtEmail.clear();
         txtPassword.clear();
         txtCMPassword.clear();
+    }
+
+    private void setCellValue(){
+        clmId.setCellValueFactory(new PropertyValueFactory("uId"));
+        clmName.setCellValueFactory(new PropertyValueFactory("name"));
+        clmEmail.setCellValueFactory(new PropertyValueFactory("email"));
+        clmRole.setCellValueFactory(new PropertyValueFactory("role"));
+    }
+
+
+    public void loadText(MouseEvent mouseEvent) {
+        ObservableList<UserTDM> user  = tblUser.getSelectionModel().getSelectedItems();
+
+        txtId.setText(user.get(0).getUId());
+        txtName.setText(user.get(0).getName());
+        txtEmail.setText(user.get(0).getEmail());
     }
 }
