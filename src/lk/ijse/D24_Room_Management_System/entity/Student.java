@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
@@ -21,9 +22,18 @@ public class Student {
     @Column(name = "contact_no")
     private String contactNo;
     @Column(name = "dob", columnDefinition = "DATE")
-    private String dob;
+    private Date dob;
     private String gender;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "student")
     private List<Reservation> studentDetails = new ArrayList<>();
+
+    public Student(String sId, String name, String address, String contactNo, Date dob, String gender) {
+        this.sId = sId;
+        this.name = name;
+        this.address = address;
+        this.contactNo = contactNo;
+        this.dob = dob;
+        this.gender = gender;
+    }
 }

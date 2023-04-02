@@ -20,4 +20,13 @@ public class StudentDTO {
     private Date date;
     private String gender;
     private List<Reservation> studentDetails = new ArrayList<>();
+
+    public StudentDTO(String sId, String name, String address, String contactNo, Date date, String gender) {
+        this.sId = sId;
+        this.name = name;
+        this.address = address;
+        this.contactNo = contactNo;
+        this.date = date;
+        this.gender = gender;
+    }
 }
