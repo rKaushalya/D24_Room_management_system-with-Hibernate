@@ -17,4 +17,11 @@ public class RoomDTO {
     private String keyMoney;
     private int qty;
     private List<Reservation> roomDetails = new ArrayList<>();
+
+    public RoomDTO(String rId, String type, String keyMoney, int qty) {
+        this.rId = rId;
+        this.type = type;
+        this.keyMoney = keyMoney;
+        this.qty = qty;
+    }
 }

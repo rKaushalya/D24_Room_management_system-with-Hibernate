@@ -3,31 +3,59 @@ package lk.ijse.D24_Room_Management_System.dao.custom.impl;
 import lk.ijse.D24_Room_Management_System.dao.custom.RoomDAO;
 import lk.ijse.D24_Room_Management_System.entity.Room;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class RoomDAOImpl implements RoomDAO {
+    private Session session;
+
     @Override
     public void setSession(Session session) {
-
-    }
-
-
-    @Override
-    public boolean save(Room object) {
-        return false;
+        this.session = session;
     }
 
     @Override
-    public boolean update(Room object) {
-        return false;
+    public boolean save(Room room) {
+        if (room != null){
+            session.save(room);
+            return true;
+        }else {
+            return false;
+        }
     }
 
     @Override
-    public Room get(String s) {
-        return null;
+    public boolean update(Room room) {
+        if (room != null){
+            session.update(room);
+            return true;
+        }else {
+            return false;
+        }
     }
 
     @Override
-    public boolean delete(Room object) {
-        return false;
+    public Room get(String id) {
+        return session.get(Room.class,id);
+    }
+
+    @Override
+    public boolean delete(Room room) {
+        if (room != null){
+            session.delete(room);
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    @Override
+    public List<Room> getAll() {
+        String hql = "FROM Room";
+        Query query = session.createQuery(hql);
+        List list = query.list();
+        session.close();
+        return list;
     }
 }
