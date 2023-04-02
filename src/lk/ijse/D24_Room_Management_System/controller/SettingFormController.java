@@ -32,14 +32,17 @@ public class SettingFormController {
     public TableColumn clmRole;
     public JFXComboBox cmbRole;
     public JFXCheckBox cbxShowPW;
+    public JFXTextField showPW;
+    public JFXTextField showCMPW;
 
     private final UserBO userBO = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.Types.USER);
-
 
     public void initialize(){
         getAllUser();
         setCellValue();
         loadRole();
+        showPW.setVisible(false);
+        showCMPW.setVisible(false);
     }
 
     private void loadRole(){
@@ -102,6 +105,21 @@ public class SettingFormController {
     }
 
     public void showPWOnAction(ActionEvent actionEvent) {
+        if (cbxShowPW.isSelected()){
+            showPW.setText(txtPassword.getText());
+            showCMPW.setText(txtCMPassword.getText());
+            txtPassword.setVisible(false);
+            txtCMPassword.setVisible(false);
+            showPW.setVisible(true);
+            showCMPW.setVisible(true);
+        }else {
+            txtPassword.setText(showPW.getText());
+            txtCMPassword.setText(showCMPW.getText());
+            txtPassword.setVisible(true);
+            txtCMPassword.setVisible(true);
+            showPW.setVisible(false);
+            showCMPW.setVisible(false);
+        }
     }
 
     private void clearText(){
@@ -122,9 +140,28 @@ public class SettingFormController {
 
     public void loadText(MouseEvent mouseEvent) {
         ObservableList<UserTDM> user  = tblUser.getSelectionModel().getSelectedItems();
-
         txtId.setText(user.get(0).getUId());
         txtName.setText(user.get(0).getName());
         txtEmail.setText(user.get(0).getEmail());
+    }
+
+    public void slipToName(ActionEvent actionEvent) {
+        txtName.requestFocus();
+    }
+
+    public void slipToEmail(ActionEvent actionEvent) {
+        txtEmail.requestFocus();
+    }
+
+    public void slipToPW(ActionEvent actionEvent) {
+        txtPassword.requestFocus();
+    }
+
+    public void slipToCmPw(ActionEvent actionEvent) {
+        txtCMPassword.requestFocus();
+    }
+
+    public void slipToRole(ActionEvent actionEvent) {
+        cmbRole.requestFocus();
     }
 }

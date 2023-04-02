@@ -24,12 +24,12 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="txtId" layoutX="369.0" layoutY="148.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtId" layoutX="369.0" layoutY="148.0" onAction="#slipToName" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtName" layoutX="369.0" layoutY="213.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtName" layoutX="369.0" layoutY="213.0" onAction="#slipToEmail" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
@@ -44,7 +44,7 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="txtEmail" layoutX="369.0" layoutY="283.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtEmail" layoutX="369.0" layoutY="283.0" onAction="#slipToPW" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
@@ -54,7 +54,7 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXPasswordField fx:id="txtPassword" layoutX="369.0" layoutY="347.0" prefHeight="27.0" prefWidth="232.0">
+      <JFXPasswordField fx:id="txtPassword" layoutX="369.0" layoutY="347.0" onAction="#slipToCmPw" prefHeight="27.0" prefWidth="232.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></JFXPasswordField>
@@ -63,7 +63,7 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXPasswordField fx:id="txtCMPassword" layoutX="369.0" layoutY="409.0" prefHeight="27.0" prefWidth="232.0">
+      <JFXPasswordField fx:id="txtCMPassword" layoutX="369.0" layoutY="409.0" onAction="#slipToRole" prefHeight="27.0" prefWidth="232.0">
          <font>
             <Font size="14.0" />
          </font></JFXPasswordField>
@@ -109,5 +109,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <JFXTextField fx:id="showPW" layoutX="369.0" layoutY="349.0" prefHeight="25.0" prefWidth="232.0">
+         <font>
+            <Font name="Courier New Bold" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="showCMPW" layoutX="369.0" layoutY="411.0" prefHeight="25.0" prefWidth="232.0">
+         <font>
+            <Font name="Courier New Bold" size="14.0" />
+         </font>
+      </JFXTextField>
    </children>
 </AnchorPane>
