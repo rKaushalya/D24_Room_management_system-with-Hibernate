@@ -59,7 +59,21 @@ public class UserBOImpl implements UserBO {
 
     @Override
     public boolean deleteUser(UserDTO dto) {
-        return false;
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            userDAO.setSession(session);
+            boolean delete = userDAO.delete(new User(dto.getUId(), dto.getName(),
+                    dto.getEmail(), dto.getPassword(), dto.getRole()));
+            transaction.commit();
+            session.close();
+            return delete;
+        }catch (Exception e){
+            System.out.println(e);
+            transaction.rollback();
+            session.close();
+            return false;
+        }
     }
 
     @Override

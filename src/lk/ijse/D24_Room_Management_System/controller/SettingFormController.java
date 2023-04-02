@@ -69,6 +69,15 @@ public class SettingFormController {
     }
 
     public void deleteOnAction(ActionEvent actionEvent) {
+        UserDTO userDTO = userBO.searchUser(txtId.getText());
+        boolean delete = userBO.deleteUser(userDTO);
+        if (delete){
+            clearText();
+            new Alert(Alert.AlertType.CONFIRMATION, "Delete Success..").show();
+        }else {
+            clearText();
+            new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
+        }
     }
 
     public void showPWOnAction(ActionEvent actionEvent) {
