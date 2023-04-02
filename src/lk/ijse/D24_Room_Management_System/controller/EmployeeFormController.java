@@ -9,10 +9,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
 import lk.ijse.D24_Room_Management_System.bo.SuperBO;
 import lk.ijse.D24_Room_Management_System.bo.custom.EmployeeBO;
 import lk.ijse.D24_Room_Management_System.dto.EmployeeDTO;
+import lk.ijse.D24_Room_Management_System.view.tdm.EmployeeTDM;
 
 public class EmployeeFormController {
     public JFXTextField txtId;
@@ -30,13 +32,11 @@ public class EmployeeFormController {
     public TableColumn cmbRole;
 
     public void initialize(){
+        getAllEmployee();
+        setCellValueFactory();
     }
 
-   /* private void loadRole(){
-        ObservableList<String> role = FXCollections.observableArrayList();
-        role.addAll("Reception","Cleaner", "Security");
-        cmbRole.setItems(role);
-    }*/
+
 
     public void addOnAction(ActionEvent actionEvent) {
         try {
@@ -96,6 +96,23 @@ public class EmployeeFormController {
             clearText();
             new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
         }
+    }
+
+    private void getAllEmployee(){
+        try {
+            ObservableList<EmployeeTDM> allEmployee = empBO.getAllEmployee();
+            tblEmployee.setItems(allEmployee);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    private void setCellValueFactory(){
+        cmbId.setCellValueFactory(new PropertyValueFactory("eId"));
+        cmbName.setCellValueFactory(new PropertyValueFactory("name"));
+        cmbAddress.setCellValueFactory(new PropertyValueFactory("address"));
+        cmbContact.setCellValueFactory(new PropertyValueFactory("contact"));
+        cmbRole.setCellValueFactory(new PropertyValueFactory("role"));
     }
 
     private void clearText(){

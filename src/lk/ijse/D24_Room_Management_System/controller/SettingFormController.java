@@ -11,6 +11,12 @@ public class SettingFormController {
     public JFXPasswordField txtPassword;
     public JFXPasswordField txtCMPassword;
 
+           /* private void loadRole(){
+        ObservableList<String> role = FXCollections.observableArrayList();
+        role.addAll("Reception","Cleaner", "Security");
+        cmbRole.setItems(role);
+    }*/
+
     public void addOnAction(ActionEvent actionEvent) {
     }
 

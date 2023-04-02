@@ -1,13 +1,19 @@
 package lk.ijse.D24_Room_Management_System.bo.custom.impl;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import lk.ijse.D24_Room_Management_System.bo.custom.EmployeeBO;
 import lk.ijse.D24_Room_Management_System.dao.DAOFactory;
 import lk.ijse.D24_Room_Management_System.dao.custom.EmployeeDAO;
 import lk.ijse.D24_Room_Management_System.dto.EmployeeDTO;
 import lk.ijse.D24_Room_Management_System.entity.Employee;
 import lk.ijse.D24_Room_Management_System.util.FactoryConfiguration;
+import lk.ijse.D24_Room_Management_System.view.tdm.EmployeeTDM;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmployeeBOImpl implements EmployeeBO {
 
@@ -89,5 +95,17 @@ public class EmployeeBOImpl implements EmployeeBO {
             session.close();
             return false;
         }
+    }
+
+    @Override
+    public ObservableList<EmployeeTDM> getAllEmployee() {
+        Session session = getSession();
+        empDAO.setSession(session);
+        List<Employee> employee = empDAO.getEmployee();
+        ObservableList<EmployeeTDM> empList = FXCollections.observableArrayList();
+        for (Employee emp : employee) {
+            empList.add(new EmployeeTDM(emp.getEId(),emp.getName(),emp.getAddress(),emp.getContact(),emp.getRole()));
+        }
+        return empList;
     }
 }
