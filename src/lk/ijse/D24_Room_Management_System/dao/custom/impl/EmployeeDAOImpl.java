@@ -4,8 +4,6 @@ import lk.ijse.D24_Room_Management_System.dao.custom.EmployeeDAO;
 import lk.ijse.D24_Room_Management_System.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
-
-import java.io.Serializable;
 import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {

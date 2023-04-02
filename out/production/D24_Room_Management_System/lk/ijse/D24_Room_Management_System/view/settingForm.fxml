@@ -75,12 +75,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXCheckBox>
-      <TableView layoutX="155.0" layoutY="557.0" prefHeight="146.0" prefWidth="547.0">
+      <TableView fx:id="tblUser" layoutX="155.0" layoutY="557.0" prefHeight="146.0" prefWidth="547.0">
          <columns>
-            <TableColumn prefWidth="96.33331298828125" text="User Id" />
-            <TableColumn prefWidth="140.0" text="Name" />
-            <TableColumn prefWidth="192.0" text="Email" />
-            <TableColumn prefWidth="117.0" text="Role" />
+            <TableColumn fx:id="clmId" prefWidth="96.33331298828125" text="User Id" />
+            <TableColumn fx:id="clmName" prefWidth="140.0" text="Name" />
+            <TableColumn fx:id="clmEmail" prefWidth="192.0" text="Email" />
+            <TableColumn fx:id="clmRole" prefWidth="117.0" text="Role" />
          </columns>
       </TableView>
       <JFXButton layoutX="676.0" layoutY="296.0" onAction="#updateOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">

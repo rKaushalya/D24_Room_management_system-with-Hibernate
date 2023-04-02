@@ -1,17 +1,13 @@
 package lk.ijse.D24_Room_Management_System.controller;
 
-import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
-import lk.ijse.D24_Room_Management_System.bo.SuperBO;
 import lk.ijse.D24_Room_Management_System.bo.custom.EmployeeBO;
 import lk.ijse.D24_Room_Management_System.dto.EmployeeDTO;
 import lk.ijse.D24_Room_Management_System.view.tdm.EmployeeTDM;
