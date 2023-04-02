@@ -14,5 +14,7 @@ public interface UserBO extends SuperBO {
 
     boolean deleteUser(UserDTO dto);
 
+    UserDTO searchUser(String id);
+
     ObservableList<UserTDM> getAllUser();
 }

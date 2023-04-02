@@ -40,12 +40,42 @@ public class UserBOImpl implements UserBO {
 
     @Override
     public boolean updateUser(UserDTO dto) {
-        return false;
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            userDAO.setSession(session);
+            boolean update = userDAO.update(new User(dto.getUId(), dto.getName(),
+                    dto.getEmail(), dto.getPassword(), dto.getRole()));
+            transaction.commit();
+            session.close();
+            return update;
+        }catch (Exception e){
+            System.out.println(e);
+            transaction.rollback();
+            session.close();
+            return false;
+        }
     }
 
     @Override
     public boolean deleteUser(UserDTO dto) {
         return false;
+    }
+
+    @Override
+    public UserDTO searchUser(String id) {
+        Session session = getSession();
+        try {
+            userDAO.setSession(session);
+            User user = userDAO.get(id);
+            session.close();
+            return new UserDTO(user.getUId(),user.getName(),
+                    user.getEmail(),user.getPassword(),user.getRole());
+        }catch (Exception e){
+            System.out.println(e);
+            session.close();
+            return null;
+        }
     }
 
     @Override

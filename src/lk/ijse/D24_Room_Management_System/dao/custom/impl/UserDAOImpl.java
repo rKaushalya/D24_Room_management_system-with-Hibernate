@@ -23,18 +23,28 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public boolean update(User object) {
-        return false;
+    public boolean update(User user) {
+        if (user != null) {
+            session.update(user);
+            return true;
+        }else {
+            return false;
+        }
     }
 
     @Override
-    public User get(String s) {
-        return null;
+    public User get(String id) {
+        return session.get(User.class, id);
     }
 
     @Override
-    public boolean delete(User object) {
-        return false;
+    public boolean delete(User user) {
+        if (user != null) {
+            session.delete(user);
+            return true;
+        }else {
+            return false;
+        }
     }
 
 }

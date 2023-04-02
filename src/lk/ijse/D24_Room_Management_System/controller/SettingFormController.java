@@ -52,6 +52,20 @@ public class SettingFormController {
     }
 
     public void updateOnAction(ActionEvent actionEvent) {
+        UserDTO userDTO = userBO.searchUser(txtId.getText());
+        userDTO.setName(txtName.getText());
+        userDTO.setEmail(txtEmail.getText());
+        userDTO.setPassword(txtPassword.getText());
+        userDTO.setRole((String) cmbRole.getValue());
+
+        boolean update = userBO.updateUser(userDTO);
+        if (update){
+            clearText();
+            new Alert(Alert.AlertType.CONFIRMATION, "Update Success..").show();
+        }else {
+            clearText();
+            new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
+        }
     }
 
     public void deleteOnAction(ActionEvent actionEvent) {
