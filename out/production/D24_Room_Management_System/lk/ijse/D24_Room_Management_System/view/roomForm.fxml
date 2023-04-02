@@ -31,17 +31,17 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="txtId" layoutX="397.0" layoutY="171.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtId" layoutX="397.0" layoutY="171.0" onAction="#slipToType" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtName" layoutX="397.0" layoutY="236.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtName" layoutX="397.0" layoutY="236.0" onAction="#slipToMoney" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtMoney" layoutX="396.0" layoutY="294.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtMoney" layoutX="396.0" layoutY="294.0" onAction="#slipToQty" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>

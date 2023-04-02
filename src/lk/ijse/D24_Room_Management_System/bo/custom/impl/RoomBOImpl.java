@@ -1,5 +1,6 @@
 package lk.ijse.D24_Room_Management_System.bo.custom.impl;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import lk.ijse.D24_Room_Management_System.bo.custom.RoomBO;
 import lk.ijse.D24_Room_Management_System.dao.DAOFactory;
@@ -10,6 +11,8 @@ import lk.ijse.D24_Room_Management_System.util.FactoryConfiguration;
 import lk.ijse.D24_Room_Management_System.view.tdm.RoomTDM;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import java.util.List;
 
 public class RoomBOImpl implements RoomBO {
 
@@ -93,6 +96,13 @@ public class RoomBOImpl implements RoomBO {
 
     @Override
     public ObservableList<RoomTDM> getAllRoom() {
-        return null;
+        Session session = getSession();
+        roomDAO.setSession(session);
+        ObservableList<RoomTDM> rooms = FXCollections.observableArrayList();
+        List<Room> all = roomDAO.getAll();
+        for (Room room : all) {
+            rooms.add(new RoomTDM(room.getRId(),room.getType(),room.getKeyMoney(),room.getQty()));
+        }
+        return rooms;
     }
 }
