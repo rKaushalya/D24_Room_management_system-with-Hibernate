@@ -9,15 +9,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
 import lk.ijse.D24_Room_Management_System.bo.custom.StudentBO;
 import lk.ijse.D24_Room_Management_System.dto.StudentDTO;
+import lk.ijse.D24_Room_Management_System.view.tdm.StudentTDM;
 
-import java.sql.Date;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -40,6 +37,9 @@ public class StudentFormController {
     private final StudentBO studentBO = (StudentBO) BOFactory.getBoFactory().getBO(BOFactory.Types.STUDENT);
 
     public void initialize(){
+        setCellValue();
+        getAllStudent();
+
         ObservableList<String> gender = FXCollections.observableArrayList();
         gender.addAll("Male","Female");
         cmbGender.setItems(gender);
@@ -57,8 +57,10 @@ public class StudentFormController {
 
         boolean update = studentBO.updateStudent(studentDTO);
         if (update){
+            clearText();
             new Alert(Alert.AlertType.CONFIRMATION, "Update Success..").show();
         }else {
+            clearText();
             new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
         }
     }
@@ -80,9 +82,58 @@ public class StudentFormController {
         StudentDTO studentDTO = studentBO.searchStudent(txtId.getText());
         boolean delete = studentBO.deleteStudent(studentDTO);
         if (delete){
+            clearText();
             new Alert(Alert.AlertType.CONFIRMATION, "Delete Success..").show();
         }else {
+            clearText();
             new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
         }
+    }
+
+    private void getAllStudent(){
+        try {
+            ObservableList<StudentTDM> allStudent = studentBO.getAllStudent();
+            tblStudent.setItems(allStudent);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    private void setCellValue(){
+        clmId.setCellValueFactory(new PropertyValueFactory("sId"));
+        clmName.setCellValueFactory(new PropertyValueFactory("name"));
+        clmAddress.setCellValueFactory(new PropertyValueFactory("address"));
+        clmContact.setCellValueFactory(new PropertyValueFactory("contact"));
+        clmDob.setCellValueFactory(new PropertyValueFactory("date"));
+        clmGender.setCellValueFactory(new PropertyValueFactory("gender"));
+    }
+
+    private void clearText(){
+        txtName.clear();
+        txtContact.clear();
+        txtDob.clear();
+        txtAddress.clear();
+        txtId.clear();
+        lblGender.setText("");
+    }
+
+    public void slipToName(ActionEvent actionEvent) {
+        txtName.requestFocus();
+    }
+
+    public void slipToAddress(ActionEvent actionEvent) {
+        txtAddress.requestFocus();
+    }
+
+    public void slipToContact(ActionEvent actionEvent) {
+        txtContact.requestFocus();
+    }
+
+    public void slipToDob(ActionEvent actionEvent) {
+        txtDob.requestFocus();
+    }
+
+    public void slipToGender(ActionEvent actionEvent) {
+        cmbGender.requestFocus();
     }
 }

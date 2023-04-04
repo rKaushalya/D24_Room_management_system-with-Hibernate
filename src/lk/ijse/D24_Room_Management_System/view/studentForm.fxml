@@ -48,27 +48,27 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="txtId" layoutX="361.0" layoutY="152.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtId" layoutX="361.0" layoutY="152.0" onAction="#slipToName" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtName" layoutX="361.0" layoutY="215.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtName" layoutX="361.0" layoutY="215.0" onAction="#slipToAddress" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtAddress" layoutX="361.0" layoutY="280.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtAddress" layoutX="361.0" layoutY="280.0" onAction="#slipToContact" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtContact" layoutX="361.0" layoutY="339.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtContact" layoutX="361.0" layoutY="339.0" onAction="#slipToDob" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <TableView fx:id="tblStudent" layoutX="146.0" layoutY="538.0" prefHeight="117.0" prefWidth="662.0">
+      <TableView fx:id="tblStudent" layoutX="109.0" layoutY="539.0" prefHeight="117.0" prefWidth="662.0">
          <columns>
             <TableColumn fx:id="clmId" prefWidth="91.66665649414062" text="Student_Id" />
             <TableColumn fx:id="clmName" prefWidth="142.66668701171875" text="Name" />
@@ -99,7 +99,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
-      <JFXTextField fx:id="txtDob" layoutX="361.0" layoutY="394.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtDob" layoutX="361.0" layoutY="394.0" onAction="#slipToGender" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
