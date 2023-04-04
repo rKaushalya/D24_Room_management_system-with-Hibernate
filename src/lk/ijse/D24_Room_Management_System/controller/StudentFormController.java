@@ -77,5 +77,12 @@ public class StudentFormController {
     }
 
     public void deleteOnAction(ActionEvent actionEvent) {
+        StudentDTO studentDTO = studentBO.searchStudent(txtId.getText());
+        boolean delete = studentBO.deleteStudent(studentDTO);
+        if (delete){
+            new Alert(Alert.AlertType.CONFIRMATION, "Delete Success..").show();
+        }else {
+            new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
+        }
     }
 }
