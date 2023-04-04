@@ -43,7 +43,7 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXDatePicker defaultColor="#1637ba" layoutX="216.0" layoutY="367.0" prefHeight="26.0" prefWidth="232.0">
+      <JFXDatePicker fx:id="txtDob" defaultColor="#1637ba" layoutX="216.0" layoutY="367.0" prefHeight="26.0" prefWidth="232.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXDatePicker>
@@ -68,7 +68,7 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXButton layoutX="619.0" layoutY="559.0" opacity="0.8" prefHeight="51.0" prefWidth="129.0" ripplerFill="#cc0fb2" style="-fx-background-color: blue; -fx-background-radius: 15;" text="Register" textFill="#f6f6f6" wrapText="true">
+      <JFXButton layoutX="619.0" layoutY="559.0" onAction="#registerOnAction" opacity="0.8" prefHeight="51.0" prefWidth="129.0" ripplerFill="#cc0fb2" style="-fx-background-color: blue; -fx-background-radius: 15;" text="Register" textFill="#f6f6f6" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>
@@ -81,22 +81,22 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField layoutX="204.0" layoutY="215.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtSId" layoutX="204.0" layoutY="215.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="593.0" layoutY="215.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtName" layoutX="593.0" layoutY="215.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="204.0" layoutY="286.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtAddress" layoutX="204.0" layoutY="286.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="598.0" layoutY="286.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtContact" layoutX="598.0" layoutY="286.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
@@ -106,7 +106,7 @@
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXComboBox labelFloat="true" layoutX="598.0" layoutY="368.0" prefHeight="25.0" prefWidth="129.0">
+      <JFXComboBox fx:id="cmbGender" labelFloat="true" layoutX="598.0" layoutY="368.0" prefHeight="25.0" prefWidth="129.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

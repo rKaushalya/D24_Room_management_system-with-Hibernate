@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,11 +18,11 @@ public class StudentDTO {
     private String name;
     private String address;
     private String contactNo;
-    private Date date;
+    private LocalDate date;
     private String gender;
     private List<Reservation> studentDetails = new ArrayList<>();
 
-    public StudentDTO(String sId, String name, String address, String contactNo, Date date, String gender) {
+    public StudentDTO(String sId, String name, String address, String contactNo, LocalDate date, String gender) {
         this.sId = sId;
         this.name = name;
         this.address = address;

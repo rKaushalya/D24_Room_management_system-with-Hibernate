@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,13 +23,13 @@ public class Student {
     @Column(name = "contact_no")
     private String contactNo;
     @Column(name = "dob", columnDefinition = "DATE")
-    private Date dob;
+    private LocalDate dob;
     private String gender;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "student")
     private List<Reservation> studentDetails = new ArrayList<>();
 
-    public Student(String sId, String name, String address, String contactNo, Date dob, String gender) {
+    public Student(String sId, String name, String address, String contactNo, LocalDate dob, String gender) {
         this.sId = sId;
         this.name = name;
         this.address = address;

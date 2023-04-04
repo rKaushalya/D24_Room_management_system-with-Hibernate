@@ -47,51 +47,60 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXTextField layoutX="361.0" layoutY="152.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtId" layoutX="361.0" layoutY="152.0" prefHeight="25.0" prefWidth="232.0">
          <font>
-            <Font name="Courier New" size="14.0" />
+            <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="361.0" layoutY="215.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtName" layoutX="361.0" layoutY="215.0" prefHeight="25.0" prefWidth="232.0">
          <font>
-            <Font name="Courier New" size="14.0" />
+            <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="361.0" layoutY="280.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtAddress" layoutX="361.0" layoutY="280.0" prefHeight="25.0" prefWidth="232.0">
          <font>
-            <Font name="Courier New" size="14.0" />
+            <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="361.0" layoutY="339.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtContact" layoutX="361.0" layoutY="339.0" prefHeight="25.0" prefWidth="232.0">
          <font>
-            <Font name="Courier New" size="14.0" />
+            <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <TableView layoutX="146.0" layoutY="538.0" prefHeight="117.0" prefWidth="662.0">
+      <TableView fx:id="tblStudent" layoutX="146.0" layoutY="538.0" prefHeight="117.0" prefWidth="662.0">
          <columns>
-            <TableColumn prefWidth="91.66665649414062" text="Student_Id" />
-            <TableColumn prefWidth="142.66668701171875" text="Name" />
-            <TableColumn prefWidth="106.6666259765625" text="Address" />
-            <TableColumn prefWidth="113.3333740234375" text="Contact" />
-            <TableColumn prefWidth="113.0" text="DOB" />
-            <TableColumn prefWidth="95.33331298828125" text="Gender" />
+            <TableColumn fx:id="clmId" prefWidth="91.66665649414062" text="Student_Id" />
+            <TableColumn fx:id="clmName" prefWidth="142.66668701171875" text="Name" />
+            <TableColumn fx:id="clmAddress" prefWidth="106.6666259765625" text="Address" />
+            <TableColumn fx:id="clmContact" prefWidth="113.3333740234375" text="Contact" />
+            <TableColumn fx:id="clmDob" prefWidth="113.0" text="DOB" />
+            <TableColumn fx:id="clmGender" prefWidth="95.33331298828125" text="Gender" />
          </columns>
       </TableView>
-      <JFXComboBox labelFloat="true" layoutX="361.0" layoutY="455.0" prefHeight="8.0" prefWidth="112.0">
+      <JFXComboBox fx:id="cmbGender" labelFloat="true" layoutX="361.0" layoutY="455.0" prefHeight="8.0" prefWidth="112.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXComboBox>
-      <JFXButton layoutX="661.0" layoutY="215.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
+      <JFXButton layoutX="661.0" layoutY="215.0" onAction="#updateOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
-      <JFXButton layoutX="661.0" layoutY="281.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: yellow; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Search" textFill="#2d1e1e" />
-      <JFXButton layoutX="661.0" layoutY="351.0" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea" />
-      <JFXTextField layoutX="361.0" layoutY="394.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXButton layoutX="661.0" layoutY="281.0" onAction="#searchOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: yellow; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Search" textFill="#2d1e1e">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton layoutX="661.0" layoutY="351.0" onAction="#deleteOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXTextField fx:id="txtDob" layoutX="361.0" layoutY="394.0" prefHeight="25.0" prefWidth="232.0">
          <font>
-            <Font name="Courier New" size="14.0" />
+            <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
    </children>
