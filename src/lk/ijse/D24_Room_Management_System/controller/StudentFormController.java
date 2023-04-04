@@ -2,10 +2,14 @@ package lk.ijse.D24_Room_Management_System.controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
 import lk.ijse.D24_Room_Management_System.bo.custom.StudentBO;
 import lk.ijse.D24_Room_Management_System.dto.StudentDTO;
@@ -31,11 +35,14 @@ public class StudentFormController {
     public TableColumn clmContact;
     public TableColumn clmDob;
     public TableColumn clmGender;
+    public Label lblGender;
 
     private final StudentBO studentBO = (StudentBO) BOFactory.getBoFactory().getBO(BOFactory.Types.STUDENT);
 
     public void initialize(){
-
+        ObservableList<String> gender = FXCollections.observableArrayList();
+        gender.addAll("Male","Female");
+        cmbGender.setItems(gender);
     }
 
     public void updateOnAction(ActionEvent actionEvent) {
@@ -43,6 +50,7 @@ public class StudentFormController {
         studentDTO.setName(txtName.getText());
         studentDTO.setAddress(txtAddress.getText());
         studentDTO.setContactNo(txtContact.getText());
+        studentDTO.setGender((String) cmbGender.getValue());
 
         LocalDate dob = LocalDate.parse(txtDob.getText(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         studentDTO.setDate(dob);
@@ -61,7 +69,7 @@ public class StudentFormController {
             txtName.setText(studentDTO.getName());
             txtAddress.setText(studentDTO.getAddress());
             txtContact.setText(studentDTO.getContactNo());
-            cmbGender.setValue(studentDTO.getGender());
+            lblGender.setText(studentDTO.getGender());
             txtDob.setText(String.valueOf(studentDTO.getDate()));
         }else {
             new Alert(Alert.AlertType.ERROR, "Wrong Id.!").show();

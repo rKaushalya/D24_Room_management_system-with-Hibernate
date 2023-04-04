@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -103,5 +104,10 @@
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
+      <Label fx:id="lblGender" layoutX="514.0" layoutY="459.0">
+         <font>
+            <Font name="Courier New Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
