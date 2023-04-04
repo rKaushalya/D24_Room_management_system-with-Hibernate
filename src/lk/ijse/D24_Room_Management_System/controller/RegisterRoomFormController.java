@@ -7,9 +7,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
+import javafx.scene.text.Text;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
+import lk.ijse.D24_Room_Management_System.bo.SuperBO;
+import lk.ijse.D24_Room_Management_System.bo.custom.ReservationBO;
 import lk.ijse.D24_Room_Management_System.bo.custom.StudentBO;
 import lk.ijse.D24_Room_Management_System.dto.StudentDTO;
+
+import java.sql.SQLException;
 
 public class RegisterRoomFormController {
     public JFXTextField txtSId;
@@ -18,11 +23,13 @@ public class RegisterRoomFormController {
     public JFXTextField txtContact;
     public JFXDatePicker txtDob;
     public JFXComboBox cmbGender;
+    public Text txtResId;
 
     public void initialize(){
+        loadResId();
+
         ObservableList<String> gender = FXCollections.observableArrayList();
         gender.addAll("male","female");
-
         cmbGender.setItems(gender);
     }
 
@@ -42,5 +49,13 @@ public class RegisterRoomFormController {
         }else {
             new Alert(Alert.AlertType.ERROR, "no").show();
         }
+    }
+
+    private void loadResId(){
+        ReservationBO bo = (ReservationBO) BOFactory.getBoFactory().getBO(BOFactory.Types.RESERVATION);
+
+            String s = bo.generateNextReservationId();
+            txtResId.setText(s);
+
     }
 }

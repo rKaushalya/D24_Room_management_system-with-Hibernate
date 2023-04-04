@@ -111,5 +111,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXComboBox>
+      <Text fx:id="txtResId" layoutX="707.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Id :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

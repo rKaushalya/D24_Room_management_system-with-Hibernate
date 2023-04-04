@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @NoArgsConstructor
@@ -15,7 +16,7 @@ public class Reservation {
     @Column(name = "res_id")
     private String resId;
     @Column(columnDefinition = "DATE")
-    private String date;
+    private LocalDate date;
     private String status;
 
     @ManyToOne

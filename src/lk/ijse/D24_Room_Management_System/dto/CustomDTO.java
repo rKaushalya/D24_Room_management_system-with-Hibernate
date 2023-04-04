@@ -1,7 +1,5 @@
 package lk.ijse.D24_Room_Management_System.dto;
 
-import lk.ijse.D24_Room_Management_System.entity.Room;
-import lk.ijse.D24_Room_Management_System.entity.Student;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,10 +9,20 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ReservationDTO {
+public class CustomDTO {
+    private String sId;
+    private String name;
+    private String address;
+    private String contactNo;
+    private LocalDate dob;
+    private String gender;
+
     private String resId;
     private LocalDate date;
     private String status;
-    private Student student;
-    private Room room;
+
+    private String rId;
+    private String type;
+    private String keyMoney;
+    private int qty;
 }

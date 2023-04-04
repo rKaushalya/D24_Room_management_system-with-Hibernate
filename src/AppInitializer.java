@@ -6,8 +6,10 @@ import lk.ijse.D24_Room_Management_System.entity.Student;
 import lk.ijse.D24_Room_Management_System.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.io.IOException;
+import java.util.List;
 
 public class AppInitializer extends Application {
 
@@ -22,5 +24,18 @@ public class AppInitializer extends Application {
         primaryStage.setTitle("Login Form");
         primaryStage.centerOnScreen();
         primaryStage.show();
+
+
+//        Session session = FactoryConfiguration.getInstance().getSession();
+        /*String hql = "SELECT resId FROM Reservation ORDER BY resId DESC";
+        Query query = session.createQuery(hql).setMaxResults(1);
+        List<String> list = query.list();
+        session.close();
+
+        for (String s : list) {
+            System.out.println(s);
+            break;
+        }*/
+
     }
 }

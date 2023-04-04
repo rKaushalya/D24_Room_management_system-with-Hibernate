@@ -58,6 +58,7 @@ public class StudentFormController {
         boolean update = studentBO.updateStudent(studentDTO);
         if (update){
             clearText();
+            getAllStudent();
             new Alert(Alert.AlertType.CONFIRMATION, "Update Success..").show();
         }else {
             clearText();
@@ -83,6 +84,7 @@ public class StudentFormController {
         boolean delete = studentBO.deleteStudent(studentDTO);
         if (delete){
             clearText();
+            getAllStudent();
             new Alert(Alert.AlertType.CONFIRMATION, "Delete Success..").show();
         }else {
             clearText();
