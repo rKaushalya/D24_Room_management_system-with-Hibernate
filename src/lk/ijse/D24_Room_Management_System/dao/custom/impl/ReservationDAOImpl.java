@@ -17,6 +17,10 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public boolean register(Reservation reservation) {
+        if (reservation != null){
+            session.save(reservation);
+            return true;
+        }
         return false;
     }
 

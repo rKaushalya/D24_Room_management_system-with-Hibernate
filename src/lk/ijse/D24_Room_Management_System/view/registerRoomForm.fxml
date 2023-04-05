@@ -52,15 +52,15 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXComboBox labelFloat="true" layoutX="164.0" layoutY="449.0" prefHeight="25.0" prefWidth="104.0" promptText="Room Type Id">
+      <JFXComboBox fx:id="cmbRid" labelFloat="true" layoutX="164.0" layoutY="449.0" prefHeight="25.0" prefWidth="104.0" promptText="Room Type Id">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXComboBox>
-      <TableView layoutX="88.0" layoutY="526.0" prefHeight="117.0" prefWidth="348.0">
+      <TableView fx:id="tblRoom" layoutX="88.0" layoutY="526.0" prefHeight="117.0" prefWidth="348.0">
         <columns>
-          <TableColumn prefWidth="128.66668701171875" text="Type" />
-          <TableColumn prefWidth="121.33331298828125" text="Key-money" />
-            <TableColumn prefWidth="97.3333740234375" text="Qty" />
+          <TableColumn fx:id="clmType" prefWidth="128.66668701171875" text="Type" />
+          <TableColumn fx:id="clmKMoney" prefWidth="121.33331298828125" text="Key-money" />
+            <TableColumn fx:id="clmQty" prefWidth="97.3333740234375" text="Qty" />
         </columns>
       </TableView>
       <Text layoutX="545.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Id :">
@@ -101,7 +101,7 @@
             <Font name="Courier New" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="591.0" layoutY="437.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="txtStatus" layoutX="591.0" layoutY="437.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New" size="14.0" />
          </font>
@@ -111,7 +111,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXComboBox>
-      <Text fx:id="txtResId" layoutX="707.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Id :">
+      <Text fx:id="txtResId" layoutX="707.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
