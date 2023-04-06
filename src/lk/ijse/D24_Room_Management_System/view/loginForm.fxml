@@ -18,12 +18,12 @@
             <Image url="@assest/Screenshot%202023-03-28%20000438.png" />
          </image>
       </ImageView>
-      <JFXTextField labelFloat="true" layoutX="671.0" layoutY="339.0" prefHeight="34.0" prefWidth="318.0" promptText="User name">
+      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="671.0" layoutY="339.0" prefHeight="34.0" prefWidth="318.0" promptText="User name">
          <font>
             <Font name="Calibri" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField labelFloat="true" layoutX="671.0" layoutY="428.0" prefHeight="34.0" prefWidth="318.0" promptText="Password">
+      <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="671.0" layoutY="428.0" prefHeight="34.0" prefWidth="318.0" promptText="Password">
          <font>
             <Font size="15.0" />
          </font>
@@ -46,7 +46,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXCheckBox layoutX="886.0" layoutY="499.0" text="Show Password">
+      <JFXCheckBox fx:id="cbxShowPw" layoutX="886.0" layoutY="499.0" onAction="#showOnAction" text="Show Password">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXCheckBox>
