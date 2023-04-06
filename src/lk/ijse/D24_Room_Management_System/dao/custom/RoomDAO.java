@@ -8,4 +8,6 @@ import java.util.List;
 public interface RoomDAO extends CrudDAO<Room , String> {
 
     List<Room> getAll();
+
+    List<String> getRoomId();
 }

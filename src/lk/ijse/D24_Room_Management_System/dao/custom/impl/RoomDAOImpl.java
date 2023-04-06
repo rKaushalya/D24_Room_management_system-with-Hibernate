@@ -58,4 +58,13 @@ public class RoomDAOImpl implements RoomDAO {
         session.close();
         return list;
     }
+
+    @Override
+    public List<String> getRoomId() {
+        String hql = "SELECT rId FROM Room";
+        Query query = session.createQuery(hql);
+        List<String> list = query.list();
+        session.close();
+        return list;
+    }
 }

@@ -18,6 +18,7 @@ import lk.ijse.D24_Room_Management_System.dto.CustomDTO;
 import lk.ijse.D24_Room_Management_System.dto.StudentDTO;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class RegisterRoomFormController {
     public JFXTextField txtSId;
@@ -38,6 +39,7 @@ public class RegisterRoomFormController {
 
     public void initialize(){
         loadResId();
+        loadRoomId();
 
         ObservableList<String> gender = FXCollections.observableArrayList();
         gender.addAll("male","female");
@@ -45,23 +47,35 @@ public class RegisterRoomFormController {
     }
 
     public void registerOnAction(ActionEvent actionEvent) {
-        try {
-            boolean added = resBO.addReservation(new CustomDTO());
+//        try {
+            LocalDate date = LocalDate.now();
+            boolean added = resBO.addReservation(new CustomDTO(txtSId.getText(),txtName.getText(),txtAddress.getText(),
+                    txtContact.getText(),txtDob.getValue(),(String)cmbGender.getValue(),txtResId.getText(),date,txtStatus.getText(),(String) cmbRid.getValue()));
             if (added){
                 new Alert(Alert.AlertType.CONFIRMATION, "Register Room Success..").show();
             }else {
                 new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
             }
+        /*}catch (Exception e){
+            System.out.println(e);
+        }*/
+    }
+
+    private void loadResId(){
+        try {
+            String s = resBO.generateNextReservationId();
+            txtResId.setText(s);
         }catch (Exception e){
             System.out.println(e);
         }
     }
 
-    private void loadResId(){
-        ReservationBO bo = (ReservationBO) BOFactory.getBoFactory().getBO(BOFactory.Types.RESERVATION);
-
-            String s = bo.generateNextReservationId();
-            txtResId.setText(s);
-
+    private void loadRoomId(){
+        try {
+            ObservableList<String> observableList = resBO.loadAllRid();
+            cmbRid.setItems(observableList);
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 }

@@ -22,7 +22,4 @@ public class CustomDTO {
     private String status;
 
     private String rId;
-    private String type;
-    private String keyMoney;
-    private int qty;
 }

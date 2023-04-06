@@ -1,5 +1,7 @@
 package lk.ijse.D24_Room_Management_System.bo.custom.impl;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
 import lk.ijse.D24_Room_Management_System.bo.SuperBO;
 import lk.ijse.D24_Room_Management_System.bo.custom.ReservationBO;
@@ -19,6 +21,7 @@ import org.hibernate.Transaction;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class ReservationBOImpl implements ReservationBO {
 
@@ -41,6 +44,8 @@ public class ReservationBOImpl implements ReservationBO {
         student.setDob(dto.getDob());
         student.setGender(dto.getGender());
 
+        Session session = getSession();
+        roomDAO.setSession(session);
         Room room = roomDAO.get(dto.getRId());
         room.setQty(room.getQty()-1);
 
@@ -54,7 +59,6 @@ public class ReservationBOImpl implements ReservationBO {
         student.getStudentDetails().add(reservation);
         room.getRoomDetails().add(reservation);
 
-        Session session = getSession();
         Transaction transaction = session.beginTransaction();
         studentDAO.setSession(session);
         boolean save = studentDAO.save(student);
@@ -74,6 +78,18 @@ public class ReservationBOImpl implements ReservationBO {
         transaction.rollback();
         session.close();
         return false;
+    }
+
+    @Override
+    public ObservableList<String> loadAllRid() {
+       ObservableList<String> roomId = FXCollections.observableArrayList();
+        Session session = getSession();
+        roomDAO.setSession(session);
+        List<String> rId = roomDAO.getRoomId();
+        for (String id : rId) {
+            roomId.add(id);
+        }
+        return roomId;
     }
 
     @Override
