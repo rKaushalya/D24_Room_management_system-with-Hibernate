@@ -2,11 +2,8 @@ package lk.ijse.D24_Room_Management_System.bo.custom.impl;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import lk.ijse.D24_Room_Management_System.bo.BOFactory;
-import lk.ijse.D24_Room_Management_System.bo.SuperBO;
 import lk.ijse.D24_Room_Management_System.bo.custom.ReservationBO;
 import lk.ijse.D24_Room_Management_System.dao.DAOFactory;
-import lk.ijse.D24_Room_Management_System.dao.SuperDAO;
 import lk.ijse.D24_Room_Management_System.dao.custom.ReservationDAO;
 import lk.ijse.D24_Room_Management_System.dao.custom.RoomDAO;
 import lk.ijse.D24_Room_Management_System.dao.custom.StudentDAO;
@@ -19,8 +16,6 @@ import lk.ijse.D24_Room_Management_System.view.tdm.RoomTDM;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 public class ReservationBOImpl implements ReservationBO {
@@ -93,8 +88,14 @@ public class ReservationBOImpl implements ReservationBO {
     }
 
     @Override
-    public RoomTDM loadRoom(String id) {
-        return null;
+    public ObservableList<RoomTDM> loadRoom(String id) {
+        Session session = getSession();
+        roomDAO.setSession(session);
+        Room room = roomDAO.get(id);
+        ObservableList<RoomTDM> rooms = FXCollections.observableArrayList();
+        rooms.add(new RoomTDM(room.getRId(),room.getType(),room.getKeyMoney(),room.getQty()));
+        session.close();
+        return rooms;
     }
 
     @Override

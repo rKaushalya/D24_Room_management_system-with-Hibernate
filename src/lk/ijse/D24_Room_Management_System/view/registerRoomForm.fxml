@@ -52,7 +52,7 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXComboBox fx:id="cmbRid" labelFloat="true" layoutX="164.0" layoutY="449.0" prefHeight="25.0" prefWidth="104.0" promptText="Room Type Id">
+      <JFXComboBox fx:id="cmbRid" labelFloat="true" layoutX="164.0" layoutY="449.0" onAction="#loadRoomOnAction" prefHeight="25.0" prefWidth="104.0" promptText="Room Type Id">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXComboBox>

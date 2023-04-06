@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
 import lk.ijse.D24_Room_Management_System.bo.SuperBO;
@@ -16,6 +17,7 @@ import lk.ijse.D24_Room_Management_System.bo.custom.ReservationBO;
 import lk.ijse.D24_Room_Management_System.bo.custom.StudentBO;
 import lk.ijse.D24_Room_Management_System.dto.CustomDTO;
 import lk.ijse.D24_Room_Management_System.dto.StudentDTO;
+import lk.ijse.D24_Room_Management_System.view.tdm.RoomTDM;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -40,6 +42,7 @@ public class RegisterRoomFormController {
     public void initialize(){
         loadResId();
         loadRoomId();
+        setSellValue();
 
         ObservableList<String> gender = FXCollections.observableArrayList();
         gender.addAll("male","female");
@@ -47,7 +50,7 @@ public class RegisterRoomFormController {
     }
 
     public void registerOnAction(ActionEvent actionEvent) {
-//        try {
+        try {
             LocalDate date = LocalDate.now();
             boolean added = resBO.addReservation(new CustomDTO(txtSId.getText(),txtName.getText(),txtAddress.getText(),
                     txtContact.getText(),txtDob.getValue(),(String)cmbGender.getValue(),txtResId.getText(),date,txtStatus.getText(),(String) cmbRid.getValue()));
@@ -56,9 +59,9 @@ public class RegisterRoomFormController {
             }else {
                 new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
             }
-        /*}catch (Exception e){
+        }catch (Exception e){
             System.out.println(e);
-        }*/
+        }
     }
 
     private void loadResId(){
@@ -74,6 +77,21 @@ public class RegisterRoomFormController {
         try {
             ObservableList<String> observableList = resBO.loadAllRid();
             cmbRid.setItems(observableList);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    private void setSellValue(){
+        clmType.setCellValueFactory(new PropertyValueFactory("type"));
+        clmKMoney.setCellValueFactory(new PropertyValueFactory("keyMoney"));
+        clmQty.setCellValueFactory(new PropertyValueFactory("qty"));
+    }
+
+    public void loadRoomOnAction(ActionEvent actionEvent) {
+        try {
+            ObservableList<RoomTDM> roomTDMS = resBO.loadRoom((String) cmbRid.getValue());
+            tblRoom.setItems(roomTDMS);
         }catch (Exception e){
             System.out.println(e);
         }

@@ -11,7 +11,7 @@ public interface ReservationBO extends SuperBO {
 
     boolean addReservation(CustomDTO dto);
 
-    RoomTDM loadRoom(String id);
+    ObservableList<RoomTDM> loadRoom(String id);
 
     String generateNextReservationId();
 
