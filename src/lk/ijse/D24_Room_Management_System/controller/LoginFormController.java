@@ -1,5 +1,7 @@
 package lk.ijse.D24_Room_Management_System.controller;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -20,6 +22,13 @@ public class LoginFormController {
     public JFXPasswordField txtPassword;
 
     private final LoginBO loginBO = (LoginBO) BOFactory.getBoFactory().getBO(BOFactory.Types.LOGIN);
+    public JFXButton btnRegister;
+    public JFXCheckBox cbxShowPw;
+    public JFXTextField txtShowPW;
+
+    public void initialize(){
+        txtShowPW.setVisible(false);
+    }
 
     public void loadDashBordOnAction(ActionEvent actionEvent) throws IOException {
         try {
@@ -42,5 +51,22 @@ public class LoginFormController {
     }
 
     public void showOnAction(ActionEvent actionEvent) {
+        if (cbxShowPw.isSelected()){
+            txtShowPW.setVisible(true);
+            txtShowPW.setText(txtPassword.getText());
+            txtPassword.setVisible(false);
+        }else {
+            txtPassword.setVisible(true);
+            txtPassword.setText(txtShowPW.getText());
+            txtShowPW.setVisible(false);
+        }
+    }
+
+    public void slipToPassword(ActionEvent actionEvent) {
+        txtPassword.requestFocus();
+    }
+
+    public void slipToButton(ActionEvent actionEvent) {
+        btnRegister.requestFocus();
     }
 }

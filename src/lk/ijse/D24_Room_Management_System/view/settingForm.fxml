@@ -109,12 +109,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXTextField fx:id="showPW" layoutX="369.0" layoutY="349.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="showPW" layoutX="369.0" layoutY="350.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="showCMPW" layoutX="369.0" layoutY="411.0" prefHeight="25.0" prefWidth="232.0">
+      <JFXTextField fx:id="showCMPW" layoutX="369.0" layoutY="412.0" prefHeight="25.0" prefWidth="232.0">
          <font>
             <Font name="Courier New Bold" size="14.0" />
          </font>

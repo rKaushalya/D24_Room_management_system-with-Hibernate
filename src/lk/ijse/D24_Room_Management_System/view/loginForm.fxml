@@ -18,12 +18,12 @@
             <Image url="@assest/Screenshot%202023-03-28%20000438.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="671.0" layoutY="339.0" prefHeight="34.0" prefWidth="318.0" promptText="User name">
+      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="671.0" layoutY="339.0" onAction="#slipToPassword" prefHeight="34.0" prefWidth="318.0" promptText="User name">
          <font>
             <Font name="Calibri" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="671.0" layoutY="428.0" prefHeight="34.0" prefWidth="318.0" promptText="Password">
+      <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="671.0" layoutY="428.0" onAction="#slipToButton" prefHeight="34.0" prefWidth="318.0" promptText="Password">
          <font>
             <Font size="15.0" />
          </font>
@@ -38,7 +38,7 @@
             <Image url="@assest/docs-illustration-1.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="865.0" layoutY="559.0" onAction="#loadDashBordOnAction" prefHeight="51.0" prefWidth="129.0" ripplerFill="#cc0fb2" style="-fx-background-color: #5f27cd; -fx-background-radius: 15;" text="Login" textFill="#f6f6f6" wrapText="true">
+      <JFXButton fx:id="btnRegister" layoutX="865.0" layoutY="559.0" onAction="#loadDashBordOnAction" prefHeight="51.0" prefWidth="129.0" ripplerFill="#cc0fb2" style="-fx-background-color: #5f27cd; -fx-background-radius: 15;" text="Login" textFill="#f6f6f6" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>
@@ -58,5 +58,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <JFXTextField fx:id="txtShowPW" labelFloat="true" layoutX="671.0" layoutY="428.0" onAction="#slipToPassword" prefHeight="34.0" prefWidth="318.0" promptText="Password">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
    </children>
 </AnchorPane>
