@@ -52,15 +52,19 @@ public class SettingFormController {
     }
 
     public void addOnAction(ActionEvent actionEvent) {
-        boolean add = userBO.addUser(new UserDTO(txtId.getText(),txtName.getText(),
-                txtEmail.getText(),txtPassword.getText(), (String) cmbRole.getValue()));
-        if (add){
-            clearText();
-            getAllUser();
-            new Alert(Alert.AlertType.CONFIRMATION, "User Added Success..").show();
+        if (txtPassword.getText().equals(txtCMPassword.getText())) {
+            boolean add = userBO.addUser(new UserDTO(txtId.getText(), txtName.getText(),
+                    txtEmail.getText(), txtPassword.getText(), (String) cmbRole.getValue()));
+            if (add) {
+                clearText();
+                getAllUser();
+                new Alert(Alert.AlertType.CONFIRMATION, "User Added Success..").show();
+            } else {
+                clearText();
+                new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
+            }
         }else {
-            clearText();
-            new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
+            new Alert(Alert.AlertType.WARNING, "Password didn't match.!").show();
         }
     }
 
@@ -71,14 +75,18 @@ public class SettingFormController {
         userDTO.setPassword(txtPassword.getText());
         userDTO.setRole((String) cmbRole.getValue());
 
-        boolean update = userBO.updateUser(userDTO);
-        if (update){
-            clearText();
-            getAllUser();
-            new Alert(Alert.AlertType.CONFIRMATION, "Update Success..").show();
+        if (txtPassword.getText() != null && txtPassword.getText().equals(txtCMPassword.getText())) {
+            boolean update = userBO.updateUser(userDTO);
+            if (update) {
+                clearText();
+                getAllUser();
+                new Alert(Alert.AlertType.CONFIRMATION, "Update Success..").show();
+            } else {
+                clearText();
+                new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
+            }
         }else {
-            clearText();
-            new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
+            new Alert(Alert.AlertType.WARNING, "Check Password again.!").show();
         }
     }
 
