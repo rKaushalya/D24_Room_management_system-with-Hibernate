@@ -22,11 +22,18 @@ public class LoginFormController {
     private final LoginBO loginBO = (LoginBO) BOFactory.getBoFactory().getBO(BOFactory.Types.LOGIN);
 
     public void loadDashBordOnAction(ActionEvent actionEvent) throws IOException {
-        boolean ok = loginBO.checkUser(txtUserName.getText(), txtPassword.getText());
-        if (ok) {
-            Navigation.navigate(Routes.DASHBOAD, pane);
-        }else {
-            new Alert(Alert.AlertType.ERROR,"Wrong UserName or Password.!").show();
+        try {
+            String user = loginBO.checkUser(txtUserName.getText(), txtPassword.getText());
+            if (user.equals("Admin")) {
+                Navigation.navigate(Routes.DASHBOAD, pane);
+            } else if (user.equals("Reception")) {
+
+            } else if (user.equals("No")) {
+                new Alert(Alert.AlertType.ERROR, "Wrong UserName or Password.!").show();
+            }
+        }catch (Exception e){
+            System.out.println(e);
+            new Alert(Alert.AlertType.ERROR, "Wrong UserName or Password.!").show();
         }
     }
 
