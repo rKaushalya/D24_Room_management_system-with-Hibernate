@@ -56,6 +56,7 @@ public class RegisterRoomFormController {
                     txtContact.getText(),txtDob.getValue(),(String)cmbGender.getValue(),txtResId.getText(),date,txtStatus.getText(),(String) cmbRid.getValue()));
             if (added){
                 new Alert(Alert.AlertType.CONFIRMATION, "Register Room Success..").show();
+                clearText();
             }else {
                 new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
             }
@@ -82,6 +83,14 @@ public class RegisterRoomFormController {
         }
     }
 
+    private void clearText(){
+        txtSId.clear();
+        txtName.clear();
+        txtAddress.clear();
+        txtContact.clear();
+        txtStatus.clear();
+    }
+
     private void setSellValue(){
         clmType.setCellValueFactory(new PropertyValueFactory("type"));
         clmKMoney.setCellValueFactory(new PropertyValueFactory("keyMoney"));
@@ -95,5 +104,30 @@ public class RegisterRoomFormController {
         }catch (Exception e){
             System.out.println(e);
         }
+        txtStatus.requestFocus();
+    }
+
+    public void slipToName(ActionEvent actionEvent) {
+        txtName.requestFocus();
+    }
+
+    public void slipToAddress(ActionEvent actionEvent) {
+        txtAddress.requestFocus();
+    }
+
+    public void slipToContact(ActionEvent actionEvent) {
+        txtContact.requestFocus();
+    }
+
+    public void slipTODob(ActionEvent actionEvent) {
+        txtDob.requestFocus();
+    }
+
+    public void slipToGender(ActionEvent actionEvent) {
+        cmbGender.requestFocus();
+    }
+
+    public void slipToRid(ActionEvent actionEvent) {
+        cmbRid.requestFocus();
     }
 }
