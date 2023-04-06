@@ -36,7 +36,7 @@ public class LoginFormController {
             if (user.equals("Admin")) {
                 Navigation.navigate(Routes.DASHBOAD, pane);
             } else if (user.equals("Reception")) {
-
+                Navigation.navigate(Routes.RECEPTION,pane);
             } else if (user.equals("No")) {
                 new Alert(Alert.AlertType.ERROR, "Wrong UserName or Password.!").show();
             }

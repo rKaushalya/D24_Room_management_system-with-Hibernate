@@ -27,6 +27,10 @@ public class Navigation {
                 stage.setTitle("DashBord Form");
                 initUi("dashBordForm.fxml");
                 break;
+            case RECEPTION:
+                stage.setTitle("Reception Form");
+                initUi("reseptionForm.fxml");
+                break;
         }
     }
 
