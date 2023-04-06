@@ -100,5 +100,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <Text fx:id="txtDate" layoutX="388.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtTime" layoutX="961.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
