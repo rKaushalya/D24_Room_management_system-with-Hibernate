@@ -1,5 +1,6 @@
 package lk.ijse.D24_Room_Management_System.controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -25,6 +26,7 @@ public class ForgetPasswordFormController {
     public JFXTextField showCmPw;
 
     private final ForgetPasswordBO forgetBO = (ForgetPasswordBO) BOFactory.getBoFactory().getBO(BOFactory.Types.FORGET);
+    public JFXButton btnForget;
 
     public void initialize(){
         showPw.setVisible(false);
@@ -65,5 +67,21 @@ public class ForgetPasswordFormController {
             showPw.setVisible(false);
             showCmPw.setVisible(false);
         }
+    }
+
+    public void slipToName(ActionEvent actionEvent) {
+        txtName.requestFocus();
+    }
+
+    public void slipToPassword(ActionEvent actionEvent) {
+        txtPassword.requestFocus();
+    }
+
+    public void slipTocmPw(ActionEvent actionEvent) {
+        txtCmPw.requestFocus();
+    }
+
+    public void slipToButton(ActionEvent actionEvent) {
+        btnForget.requestFocus();
     }
 }
