@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
 import lk.ijse.D24_Room_Management_System.bo.SuperBO;
@@ -21,6 +22,8 @@ import lk.ijse.D24_Room_Management_System.view.tdm.RoomTDM;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RegisterRoomFormController {
     public JFXTextField txtSId;
@@ -36,6 +39,11 @@ public class RegisterRoomFormController {
     public TableColumn clmType;
     public TableColumn clmKMoney;
     public TableColumn clmQty;
+
+    private Matcher userNameMatcher;
+    private Matcher emailMatcher;
+    private Matcher telMatcher;
+    private Matcher address;
 
     private final ReservationBO resBO = (ReservationBO) BOFactory.getBoFactory().getBO(BOFactory.Types.RESERVATION);
 
@@ -112,15 +120,33 @@ public class RegisterRoomFormController {
     }
 
     public void slipToAddress(ActionEvent actionEvent) {
-        txtAddress.requestFocus();
+        setPatten();
+        if (!userNameMatcher.matches()){
+            txtName.setFocusColor(Paint.valueOf("Red"));
+        }else {
+            txtName.setFocusColor(Paint.valueOf("Blue"));
+            txtAddress.requestFocus();
+        }
     }
 
     public void slipToContact(ActionEvent actionEvent) {
-        txtContact.requestFocus();
+        setPatten();
+        if (!address.matches()){
+            txtAddress.setFocusColor(Paint.valueOf("Red"));
+        }else {
+            txtAddress.setFocusColor(Paint.valueOf("Blue"));
+            txtContact.requestFocus();
+        }
     }
 
     public void slipTODob(ActionEvent actionEvent) {
-        txtDob.requestFocus();
+        setPatten();
+        if (!telMatcher.matches()){
+            txtContact.setFocusColor(Paint.valueOf("Red"));
+        }else {
+            txtContact.setFocusColor(Paint.valueOf("Blue"));
+            txtDob.requestFocus();
+        }
     }
 
     public void slipToGender(ActionEvent actionEvent) {
@@ -129,5 +155,17 @@ public class RegisterRoomFormController {
 
     public void slipToRid(ActionEvent actionEvent) {
         cmbRid.requestFocus();
+    }
+
+    private void setPatten() {
+
+        Pattern userNamePatten = Pattern.compile("^[a-zA-Z0-9]{4,}$");
+        userNameMatcher = userNamePatten.matcher(txtName.getText());
+
+        Pattern telPattern = Pattern.compile("^(?:7|0|(?:\\+94))[0-9]{9,10}$");
+        telMatcher = telPattern.matcher(txtContact.getText());
+
+        Pattern userAddress = Pattern.compile("^[a-zA-Z0-9]{3,}$");
+        address = userAddress.matcher(txtAddress.getText());
     }
 }
