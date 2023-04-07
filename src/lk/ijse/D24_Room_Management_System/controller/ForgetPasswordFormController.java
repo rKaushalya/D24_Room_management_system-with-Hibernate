@@ -7,6 +7,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Paint;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
 import lk.ijse.D24_Room_Management_System.bo.SuperBO;
 import lk.ijse.D24_Room_Management_System.bo.custom.ForgetPasswordBO;
@@ -14,6 +15,8 @@ import lk.ijse.D24_Room_Management_System.util.Navigation;
 import lk.ijse.D24_Room_Management_System.util.Routes;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ForgetPasswordFormController {
     public AnchorPane pane;
@@ -24,6 +27,10 @@ public class ForgetPasswordFormController {
     public JFXCheckBox cbxShow;
     public JFXTextField showPw;
     public JFXTextField showCmPw;
+
+    private Matcher userNameMatcher;
+    private Matcher pwMatcher;
+    private Matcher userIdMatcher;
 
     private final ForgetPasswordBO forgetBO = (ForgetPasswordBO) BOFactory.getBoFactory().getBO(BOFactory.Types.FORGET);
     public JFXButton btnForget;
@@ -70,18 +77,48 @@ public class ForgetPasswordFormController {
     }
 
     public void slipToName(ActionEvent actionEvent) {
-        txtName.requestFocus();
+        setPatten();
+        if (!userIdMatcher.matches()){
+            txtId.setFocusColor(Paint.valueOf("Red"));
+        }else {
+            txtId.setFocusColor(Paint.valueOf("Blue"));
+            txtName.requestFocus();
+        }
     }
 
     public void slipToPassword(ActionEvent actionEvent) {
-        txtPassword.requestFocus();
+        setPatten();
+        if (!userNameMatcher.matches()){
+            txtName.setFocusColor(Paint.valueOf("Red"));
+        }else {
+            txtName.setFocusColor(Paint.valueOf("Blue"));
+            txtPassword.requestFocus();
+        }
     }
 
     public void slipTocmPw(ActionEvent actionEvent) {
-        txtCmPw.requestFocus();
+        setPatten();
+        if (!pwMatcher.matches()){
+            txtPassword.setFocusColor(Paint.valueOf("Red"));
+        }else {
+            txtPassword.setFocusColor(Paint.valueOf("Blue"));
+            txtCmPw.requestFocus();
+        }
     }
 
     public void slipToButton(ActionEvent actionEvent) {
         btnForget.requestFocus();
+    }
+
+    private void setPatten() {
+
+        Pattern userIdPattern = Pattern.compile("^(U0)([0-9]{1,})([1-9]{0,})$");
+        userIdMatcher = userIdPattern.matcher(txtId.getText());
+
+        Pattern userNamePatten = Pattern.compile("^[a-zA-Z0-9]{4,}$");
+        userNameMatcher = userNamePatten.matcher(txtName.getText());
+
+        Pattern passwordPattern = Pattern.compile("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+        pwMatcher = passwordPattern.matcher(txtPassword.getText());
     }
 }
