@@ -50,5 +50,20 @@ public class ForgetPasswordFormController {
     }
 
     public void showOnAction(ActionEvent actionEvent) {
+        if (cbxShow.isSelected()){
+            showPw.setVisible(true);
+            showCmPw.setVisible(true);
+            showPw.setText(txtPassword.getText());
+            showCmPw.setText(txtCmPw.getText());
+            txtPassword.setVisible(false);
+            txtCmPw.setVisible(false);
+        }else {
+            txtPassword.setVisible(true);
+            txtCmPw.setVisible(true);
+            txtPassword.setText(showPw.getText());
+            txtCmPw.setText(showCmPw.getText());
+            showPw.setVisible(false);
+            showCmPw.setVisible(false);
+        }
     }
 }
