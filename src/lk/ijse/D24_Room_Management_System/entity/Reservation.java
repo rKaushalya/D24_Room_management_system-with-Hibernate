@@ -21,13 +21,13 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "student_id",
-     referencedColumnName = "student_id",
-     /*insertable = false,*/ updatable = false)
+     referencedColumnName = "student_id"/*,
+     insertable = false,*/ /*updatable = false*/)
     private Student student;
 
     @ManyToOne
     @JoinColumn(name = "room_type_id",
-    referencedColumnName = "room_type_id",
-    /*insertable = false,*/ updatable = false)
+    referencedColumnName = "room_type_id"/*,
+    insertable = false,*/ /*updatable = false*/)
     private Room room;
 }

@@ -105,7 +105,7 @@ public class StudentFormController {
         clmId.setCellValueFactory(new PropertyValueFactory("sId"));
         clmName.setCellValueFactory(new PropertyValueFactory("name"));
         clmAddress.setCellValueFactory(new PropertyValueFactory("address"));
-        clmContact.setCellValueFactory(new PropertyValueFactory("contact"));
+        clmContact.setCellValueFactory(new PropertyValueFactory("contactNo"));
         clmDob.setCellValueFactory(new PropertyValueFactory("date"));
         clmGender.setCellValueFactory(new PropertyValueFactory("gender"));
     }
