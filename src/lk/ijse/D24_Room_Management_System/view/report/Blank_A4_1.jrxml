@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="512efbda-e81b-49fa-92c3-a3d3dd9ce468">
+	<parameter name="roomId" class="java.lang.String"/>
+	<parameter name="studentName" class="java.lang.String"/>
+	<parameter name="paid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement x="92" y="0" width="370" height="30" uuid="1e4754c2-2a73-4890-badf-6bbe9c73b350"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[D24 RoomService]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="164" y="35" width="226" height="25" uuid="bb1d88ef-b745-4c42-80d7-9a154f2f8380"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No 25 / A Galle Road Unavatuna]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="206" y="60" width="142" height="18" uuid="8f9069c0-58a2-40ee-a643-fb8d8b41c24f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ravinduk56@gmail.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="80" width="178" height="20" uuid="a117af9d-9d1f-4ba6-9f5e-16e5a35b34d2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[0765320187 / 0788730420]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="10" y="50" width="100" height="30" uuid="e0bc1882-60f1-4ab2-956f-712505d5f1a8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="475" y="50" width="100" height="30" uuid="3f2c0443-d146-4296-acd1-07c1a5a72358"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-2" y="99" width="557" height="1" uuid="1dea8c0d-3a0a-4fcc-9417-051fec98ed7b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="19" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement x="25" y="14" width="100" height="30" uuid="268fb60f-30ef-45ba-aef4-aa06831408a6"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Room Id =]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="14" width="100" height="30" uuid="09a48a5f-a849-486e-a004-03316cb1bc0e"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{roomId}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="15" width="81" height="30" uuid="bcbf024f-ea1a-4666-b296-e68d97a10aec"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Rent To]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="15" width="100" height="30" uuid="d94d8a47-8b4b-42e1-ac9e-d5244d5a84eb"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{studentName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="100" y="90" width="160" height="30" uuid="228173c8-9709-4c17-bab3-6aee21b7ab3c"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Payment Status :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="268" y="90" width="100" height="30" uuid="45a46958-4555-4472-8b1d-e100de0aff45"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{paid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement x="229" y="30" width="100" height="30" uuid="9cfa01f9-12aa-4bce-91fb-fc0c90e0e9ee"/>
+				<textElement>
+					<font size="16" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Thank you...!]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

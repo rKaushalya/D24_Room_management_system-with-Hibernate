@@ -19,9 +19,13 @@ import lk.ijse.D24_Room_Management_System.bo.custom.StudentBO;
 import lk.ijse.D24_Room_Management_System.dto.CustomDTO;
 import lk.ijse.D24_Room_Management_System.dto.StudentDTO;
 import lk.ijse.D24_Room_Management_System.view.tdm.RoomTDM;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -64,6 +68,7 @@ public class RegisterRoomFormController {
                     txtContact.getText(),txtDob.getValue(),(String)cmbGender.getValue(),txtResId.getText(),date,txtStatus.getText(),(String) cmbRid.getValue()));
             if (added){
                 new Alert(Alert.AlertType.CONFIRMATION, "Register Room Success..").show();
+                printBill();
                 clearText();
             }else {
                 new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
@@ -167,5 +172,24 @@ public class RegisterRoomFormController {
 
         Pattern userAddress = Pattern.compile("^[a-zA-Z0-9]{3,}$");
         address = userAddress.matcher(txtAddress.getText());
+    }
+
+    private void printBill() {
+        HashMap bill = new HashMap();
+
+        bill.put("roomId", String.valueOf(cmbRid.getValue()));
+        bill.put("studentName", txtName.getText());
+        bill.put("paid", txtStatus.getText());
+        try {
+            InputStream resource = this.getClass().getResourceAsStream("/lk/ijse/D24_Room_Management_System/view/report/Blank_A4_1.jrxml");
+
+            JasperReport jasperReport = JasperCompileManager.compileReport(resource);
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, bill, new JREmptyDataSource(1));
+
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }
