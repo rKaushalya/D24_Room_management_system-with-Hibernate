@@ -23,7 +23,6 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.InputStream;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.regex.Matcher;
@@ -38,14 +37,13 @@ public class RegisterRoomFormController {
     public JFXComboBox cmbGender;
     public Text txtResId;
     public JFXComboBox cmbRid;
-    public JFXTextField txtStatus;
     public TableView tblRoom;
     public TableColumn clmType;
     public TableColumn clmKMoney;
     public TableColumn clmQty;
+    public JFXComboBox cmbStatus;
 
     private Matcher userNameMatcher;
-    private Matcher emailMatcher;
     private Matcher telMatcher;
     private Matcher address;
 
@@ -59,13 +57,17 @@ public class RegisterRoomFormController {
         ObservableList<String> gender = FXCollections.observableArrayList();
         gender.addAll("male","female");
         cmbGender.setItems(gender);
+
+        ObservableList<String> status = FXCollections.observableArrayList();
+        status.addAll("Paid","Not Paid");
+        cmbStatus.setItems(status);
     }
 
     public void registerOnAction(ActionEvent actionEvent) {
         try {
             LocalDate date = LocalDate.now();
             boolean added = resBO.addReservation(new CustomDTO(txtSId.getText(),txtName.getText(),txtAddress.getText(),
-                    txtContact.getText(),txtDob.getValue(),(String)cmbGender.getValue(),txtResId.getText(),date,txtStatus.getText(),(String) cmbRid.getValue()));
+                    txtContact.getText(),txtDob.getValue(),(String)cmbGender.getValue(),txtResId.getText(),date, (String) cmbStatus.getValue(),(String) cmbRid.getValue()));
             if (added){
                 new Alert(Alert.AlertType.CONFIRMATION, "Register Room Success..").show();
                 printBill();
@@ -101,7 +103,6 @@ public class RegisterRoomFormController {
         txtName.clear();
         txtAddress.clear();
         txtContact.clear();
-        txtStatus.clear();
     }
 
     private void setSellValue(){
@@ -117,7 +118,7 @@ public class RegisterRoomFormController {
         }catch (Exception e){
             System.out.println(e);
         }
-        txtStatus.requestFocus();
+        cmbStatus.requestFocus();
     }
 
     public void slipToName(ActionEvent actionEvent) {
@@ -179,7 +180,7 @@ public class RegisterRoomFormController {
 
         bill.put("roomId", String.valueOf(cmbRid.getValue()));
         bill.put("studentName", txtName.getText());
-        bill.put("paid", txtStatus.getText());
+        bill.put("paid", String.valueOf(cmbStatus.getValue()));
         try {
             InputStream resource = this.getClass().getResourceAsStream("/lk/ijse/D24_Room_Management_System/view/report/Blank_A4_1.jrxml");
 

@@ -101,11 +101,6 @@
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtStatus" layoutX="591.0" layoutY="437.0" prefHeight="25.0" prefWidth="232.0">
-         <font>
-            <Font name="Courier New Bold" size="14.0" />
-         </font>
-      </JFXTextField>
       <JFXComboBox fx:id="cmbGender" labelFloat="true" layoutX="598.0" layoutY="368.0" onAction="#slipToRid" prefHeight="25.0" prefWidth="129.0">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -116,5 +111,10 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
+      <JFXComboBox fx:id="cmbStatus" labelFloat="true" layoutX="560.0" layoutY="449.0" onAction="#slipToRid" prefHeight="25.0" prefWidth="149.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
    </children>
 </AnchorPane>
