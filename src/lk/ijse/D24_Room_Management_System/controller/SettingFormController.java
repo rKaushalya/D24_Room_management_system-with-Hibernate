@@ -13,11 +13,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Paint;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
 import lk.ijse.D24_Room_Management_System.bo.SuperBO;
 import lk.ijse.D24_Room_Management_System.bo.custom.UserBO;
 import lk.ijse.D24_Room_Management_System.dto.UserDTO;
 import lk.ijse.D24_Room_Management_System.view.tdm.UserTDM;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SettingFormController {
     public JFXTextField txtId;
@@ -34,6 +38,11 @@ public class SettingFormController {
     public JFXCheckBox cbxShowPW;
     public JFXTextField showPW;
     public JFXTextField showCMPW;
+
+    private Matcher userNameMatcher;
+    private Matcher emailMatcher;
+    private Matcher pwMatcher;
+    private Matcher userIdMatcher;
 
     private final UserBO userBO = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.Types.USER);
 
@@ -154,22 +163,61 @@ public class SettingFormController {
     }
 
     public void slipToName(ActionEvent actionEvent) {
-        txtName.requestFocus();
+        setPatten();
+        if (!userIdMatcher.matches()){
+            txtId.setFocusColor(Paint.valueOf("Red"));
+        }else {
+            txtId.setFocusColor(Paint.valueOf("Blue"));
+            txtName.requestFocus();
+        }
     }
 
     public void slipToEmail(ActionEvent actionEvent) {
-        txtEmail.requestFocus();
+        setPatten();
+        if (!userNameMatcher.matches()){
+            txtName.setFocusColor(Paint.valueOf("Red"));
+        }else {
+            txtName.setFocusColor(Paint.valueOf("Blue"));
+            txtEmail.requestFocus();
+        }
     }
 
     public void slipToPW(ActionEvent actionEvent) {
-        txtPassword.requestFocus();
+        setPatten();
+        if (!emailMatcher.matches()){
+            txtEmail.setFocusColor(Paint.valueOf("Red"));
+        }else {
+            txtEmail.setFocusColor(Paint.valueOf("Blue"));
+            txtPassword.requestFocus();
+        }
     }
 
     public void slipToCmPw(ActionEvent actionEvent) {
-        txtCMPassword.requestFocus();
+        setPatten();
+        if (!pwMatcher.matches()){
+            txtPassword.setFocusColor(Paint.valueOf("Red"));
+        }else {
+            txtPassword.setFocusColor(Paint.valueOf("Blue"));
+            txtCMPassword.requestFocus();
+        }
     }
 
     public void slipToRole(ActionEvent actionEvent) {
         cmbRole.requestFocus();
+    }
+
+    private void setPatten() {
+
+        Pattern userIdPattern = Pattern.compile("^(U0)([0-9]{1,})([1-9]{0,})$");
+        userIdMatcher = userIdPattern.matcher(txtId.getText());
+
+        Pattern userNamePatten = Pattern.compile("^[a-zA-Z0-9]{4,}$");
+        userNameMatcher = userNamePatten.matcher(txtName.getText());
+
+        Pattern emailPattern = Pattern.compile("^([a-z0-9]{2,})([@])([a-z]{2,9})([.])([a-z]{2,})$");
+        emailMatcher = emailPattern.matcher(txtEmail.getText());
+
+        Pattern passwordPattern = Pattern.compile("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+        pwMatcher = passwordPattern.matcher(txtPassword.getText());
     }
 }
