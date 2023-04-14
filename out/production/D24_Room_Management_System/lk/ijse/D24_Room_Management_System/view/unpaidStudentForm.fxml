@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="unpaidPane" prefHeight="759.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.UnpaidStudentFormController">
    <children>
@@ -11,6 +14,87 @@
          <font>
             <Font name="Corbel" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
+      <JFXButton layoutX="671.0" layoutY="235.0" onAction="#updateOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: green; -fx-background-radius: 10; -fx-border-radius: 10;" text="Update" textFill="#ebdddd">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="671.0" layoutY="325.0" onAction="#deleteOnAction" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-radius: 10;" text="Delete" textFill="#f4eaea">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fill="#2d60d7" layoutX="317.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unpaid Student" textAlignment="CENTER" wrappingWidth="265.94757080078125">
+         <font>
+            <Font name="Georgia" size="35.0" />
+         </font>
+      </Text>
+      <Text layoutX="182.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Id :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="182.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="182.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="180.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtId" layoutX="346.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="Corbel" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtName" layoutX="346.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="Corbel" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtAddress" layoutX="346.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="Corbel" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtContact" layoutX="346.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="Corbel" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="180.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status :">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtPaid" layoutX="345.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Paid">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tblStudent" layoutX="119.0" layoutY="508.0" prefHeight="189.0" prefWidth="662.0">
+         <columns>
+            <TableColumn fx:id="clmId" prefWidth="91.66665649414062" text="Student_Id" />
+            <TableColumn fx:id="clmName" prefWidth="142.66668701171875" text="Name" />
+            <TableColumn fx:id="clmAddress" prefWidth="106.6666259765625" text="Address" />
+            <TableColumn fx:id="clmContact" prefWidth="113.3333740234375" text="Contact" />
+            <TableColumn fx:id="clmDob" prefWidth="113.0" text="DOB" />
+            <TableColumn fx:id="clmGender" prefWidth="95.33331298828125" text="Gender" />
+         </columns>
+      </TableView>
    </children>
 </AnchorPane>
