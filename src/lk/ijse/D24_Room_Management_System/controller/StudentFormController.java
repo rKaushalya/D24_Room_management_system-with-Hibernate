@@ -5,16 +5,20 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
 import lk.ijse.D24_Room_Management_System.bo.custom.StudentBO;
 import lk.ijse.D24_Room_Management_System.dto.StudentDTO;
 import lk.ijse.D24_Room_Management_System.view.tdm.StudentTDM;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -35,6 +39,7 @@ public class StudentFormController {
     public Label lblGender;
 
     private final StudentBO studentBO = (StudentBO) BOFactory.getBoFactory().getBO(BOFactory.Types.STUDENT);
+    public AnchorPane studentPane;
 
     public void initialize(){
         setCellValue();
@@ -90,6 +95,16 @@ public class StudentFormController {
             clearText();
             new Alert(Alert.AlertType.ERROR, "Something Wrong.!").show();
         }
+    }
+
+    public void setUi(String ui) throws IOException {
+        Parent load = FXMLLoader.load(getClass().getResource(ui));
+        studentPane.getChildren().clear();
+        studentPane.getChildren().add(load);
+    }
+
+    public void unpaidStudent(ActionEvent actionEvent) throws IOException {
+        setUi("/lk/ijse/D24_Room_Management_System/view/unpaidStudentForm.fxml");
     }
 
     private void getAllStudent(){
