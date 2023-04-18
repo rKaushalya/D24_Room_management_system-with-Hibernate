@@ -46,12 +46,12 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="182.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address :">
+      <Text layoutX="182.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Res Id :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="180.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No :">
+      <Text layoutX="180.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Id :">
          <font>
             <Font name="Constantia" size="22.0" />
          </font>
@@ -66,12 +66,12 @@
             <Font name="Corbel" size="22.0" />
          </font>
       </Text>
-      <Text fx:id="txtAddress" layoutX="346.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0">
+      <Text fx:id="txtResId" layoutX="346.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font name="Corbel" size="22.0" />
          </font>
       </Text>
-      <Text fx:id="txtContact" layoutX="346.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0">
+      <Text fx:id="txtRoomId" layoutX="346.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font name="Corbel" size="22.0" />
          </font>
@@ -86,7 +86,7 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <TableView fx:id="tblStudent" layoutX="119.0" layoutY="508.0" prefHeight="189.0" prefWidth="662.0">
+      <TableView fx:id="tblStudent" layoutX="119.0" layoutY="508.0" onMouseClicked="#loadText" prefHeight="189.0" prefWidth="662.0">
          <columns>
             <TableColumn fx:id="clmId" prefWidth="91.66665649414062" text="Student_Id" />
             <TableColumn fx:id="clmName" prefWidth="142.66668701171875" text="Name" />

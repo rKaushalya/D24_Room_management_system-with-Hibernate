@@ -4,16 +4,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
 import lk.ijse.D24_Room_Management_System.bo.custom.UnpaidStudentBO;
-import lk.ijse.D24_Room_Management_System.dto.CustomDTO;
 import lk.ijse.D24_Room_Management_System.view.tdm.CustomTDM;
-import lk.ijse.D24_Room_Management_System.view.tdm.StudentTDM;
 
 import java.io.IOException;
 
@@ -21,8 +21,8 @@ public class UnpaidStudentFormController {
     public AnchorPane unpaidPane;
     public Text txtId;
     public Text txtName;
-    public Text txtAddress;
-    public Text txtContact;
+    public Text txtRoomId;
+    public Text txtResId;
     public TableView tblStudent;
     public TableColumn clmId;
     public TableColumn clmName;
@@ -58,6 +58,13 @@ public class UnpaidStudentFormController {
     }
 
     public void updateOnAction(ActionEvent actionEvent) {
+        boolean update = unpaidStudentBO.updateStatus(txtResId.getText(), txtPaid.getText());
+        if (update){
+            getStudent();
+            new Alert(Alert.AlertType.CONFIRMATION,"Update Conform...").show();
+        }else {
+            new Alert(Alert.AlertType.ERROR,"Something Wrong.!").show();
+        }
     }
 
     public void deleteOnAction(ActionEvent actionEvent) {
@@ -70,5 +77,13 @@ public class UnpaidStudentFormController {
         clmRType.setCellValueFactory(new PropertyValueFactory("type"));
         clmResId.setCellValueFactory(new PropertyValueFactory("resId"));
         clmStatus.setCellValueFactory(new PropertyValueFactory("status"));
+    }
+
+    public void loadText(MouseEvent mouseEvent) {
+        ObservableList<CustomTDM> std = tblStudent.getSelectionModel().getSelectedItems();
+        txtId.setText(std.get(0).getSId());
+        txtName.setText(std.get(0).getName());
+        txtResId.setText(std.get(0).getResId());
+        txtRoomId.setText(std.get(0).getRId());
     }
 }

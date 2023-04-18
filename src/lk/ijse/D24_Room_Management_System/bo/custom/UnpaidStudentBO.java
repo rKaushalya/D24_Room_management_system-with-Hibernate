@@ -8,4 +8,6 @@ import lk.ijse.D24_Room_Management_System.view.tdm.StudentTDM;
 
 public interface UnpaidStudentBO extends SuperBO {
     ObservableList<CustomTDM> getUnpaidStudents();
+
+    boolean updateStatus(String id,String status);
 }

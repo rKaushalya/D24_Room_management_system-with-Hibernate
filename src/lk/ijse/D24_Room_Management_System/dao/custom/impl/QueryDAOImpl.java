@@ -24,4 +24,18 @@ public class QueryDAOImpl implements QueryDAO {
         session.close();
         return list;
     }
+
+    @Override
+    public boolean update(String resId,String status) {
+            String hql = "UPDATE Reservation SET status = :new WHERE resId = :id";
+            Query query = session.createQuery(hql);
+            query.setParameter("new",status);
+            query.setParameter("id",resId);
+            int i = query.executeUpdate();
+            if (i > 0){
+                return true;
+        }else {
+                return false;
+            }
+    }
 }
