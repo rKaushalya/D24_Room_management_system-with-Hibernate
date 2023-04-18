@@ -10,8 +10,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import lk.ijse.D24_Room_Management_System.bo.BOFactory;
-import lk.ijse.D24_Room_Management_System.bo.SuperBO;
 import lk.ijse.D24_Room_Management_System.bo.custom.UnpaidStudentBO;
+import lk.ijse.D24_Room_Management_System.dto.CustomDTO;
+import lk.ijse.D24_Room_Management_System.view.tdm.CustomTDM;
 import lk.ijse.D24_Room_Management_System.view.tdm.StudentTDM;
 
 import java.io.IOException;
@@ -25,10 +26,10 @@ public class UnpaidStudentFormController {
     public TableView tblStudent;
     public TableColumn clmId;
     public TableColumn clmName;
-    public TableColumn clmAddress;
-    public TableColumn clmContact;
-    public TableColumn clmDob;
-    public TableColumn clmGender;
+    public TableColumn clmRId;
+    public TableColumn clmRType;
+    public TableColumn clmResId;
+    public TableColumn clmStatus;
     public Text txtPaid;
 
     private final UnpaidStudentBO unpaidStudentBO = (UnpaidStudentBO) BOFactory.getBoFactory().getBO(BOFactory.Types.UNPAID);
@@ -49,7 +50,7 @@ public class UnpaidStudentFormController {
 
     private void getStudent(){
         try {
-            ObservableList<StudentTDM> unpaidStudents = unpaidStudentBO.getUnpaidStudents();
+            ObservableList<CustomTDM> unpaidStudents = unpaidStudentBO.getUnpaidStudents();
             tblStudent.setItems(unpaidStudents);
         }catch (Exception e){
             e.printStackTrace();
@@ -64,5 +65,10 @@ public class UnpaidStudentFormController {
 
     private void setColValues(){
         clmId.setCellValueFactory(new PropertyValueFactory("sId"));
+        clmName.setCellValueFactory(new PropertyValueFactory("name"));
+        clmRId.setCellValueFactory(new PropertyValueFactory("rId"));
+        clmRType.setCellValueFactory(new PropertyValueFactory("type"));
+        clmResId.setCellValueFactory(new PropertyValueFactory("resId"));
+        clmStatus.setCellValueFactory(new PropertyValueFactory("status"));
     }
 }

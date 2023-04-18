@@ -1,8 +1,6 @@
 package lk.ijse.D24_Room_Management_System.dao.custom.impl;
 
 import lk.ijse.D24_Room_Management_System.dao.custom.QueryDAO;
-import lk.ijse.D24_Room_Management_System.entity.Custom;
-import lk.ijse.D24_Room_Management_System.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -17,12 +15,12 @@ public class QueryDAOImpl implements QueryDAO {
     }
 
     @Override
-    public List<Custom> loadAllStudent() {
-        String hql = "SELECT Student.sId,Student .name,Student .address,Student .contactNo,Student .dob,Student .gender," +
-                "Reservation .resId FROM Student INNER JOIN Reservation ON Student .sId = Reservation.student.sId WHERE " +
-                "Reservation .status ='Not Paid'";
+    public List<Object[]> loadAllStudent() {
+        String hql = "SELECT res.resId,s.sId,s.name, r.rId, r.type, res.status FROM Reservation res JOIN " +
+                "Student s ON res.student=s.sId JOIN Room r ON res.room=r.rId \n" +
+                "WHERE res.status='Not Paid'";
         Query query = session.createQuery(hql);
-        List<Custom> list = query.list();
+        List<Object[]> list = query.list();
         session.close();
         return list;
     }

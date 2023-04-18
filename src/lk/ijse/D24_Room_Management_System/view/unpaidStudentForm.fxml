@@ -90,10 +90,10 @@
          <columns>
             <TableColumn fx:id="clmId" prefWidth="91.66665649414062" text="Student_Id" />
             <TableColumn fx:id="clmName" prefWidth="142.66668701171875" text="Name" />
-            <TableColumn fx:id="clmAddress" prefWidth="106.6666259765625" text="Address" />
-            <TableColumn fx:id="clmContact" prefWidth="113.3333740234375" text="Contact" />
-            <TableColumn fx:id="clmDob" prefWidth="113.0" text="DOB" />
-            <TableColumn fx:id="clmGender" prefWidth="95.33331298828125" text="Gender" />
+            <TableColumn fx:id="clmRId" prefWidth="106.6666259765625" text="Room ID" />
+            <TableColumn fx:id="clmRType" prefWidth="113.3333740234375" text="Room Type" />
+            <TableColumn fx:id="clmResId" prefWidth="113.0" text="Res Id" />
+            <TableColumn fx:id="clmStatus" prefWidth="95.33331298828125" text="Status" />
          </columns>
       </TableView>
    </children>

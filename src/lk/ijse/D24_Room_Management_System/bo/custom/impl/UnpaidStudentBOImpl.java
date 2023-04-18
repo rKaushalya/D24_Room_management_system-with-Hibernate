@@ -5,9 +5,9 @@ import javafx.collections.ObservableList;
 import lk.ijse.D24_Room_Management_System.bo.custom.UnpaidStudentBO;
 import lk.ijse.D24_Room_Management_System.dao.DAOFactory;
 import lk.ijse.D24_Room_Management_System.dao.custom.QueryDAO;
-import lk.ijse.D24_Room_Management_System.entity.Custom;
+import lk.ijse.D24_Room_Management_System.dto.CustomDTO;
 import lk.ijse.D24_Room_Management_System.util.FactoryConfiguration;
-import lk.ijse.D24_Room_Management_System.view.tdm.StudentTDM;
+import lk.ijse.D24_Room_Management_System.view.tdm.CustomTDM;
 import org.hibernate.Session;
 
 import java.util.List;
@@ -21,13 +21,13 @@ public class UnpaidStudentBOImpl implements UnpaidStudentBO {
     }
 
     @Override
-    public ObservableList<StudentTDM> getUnpaidStudents() {
-        ObservableList<StudentTDM> std = FXCollections.observableArrayList();
+    public ObservableList<CustomTDM> getUnpaidStudents() {
+        ObservableList<CustomTDM> std = FXCollections.observableArrayList();
         Session session = getSession();
         unpaidDAO.setSession(session);
-        List<Custom> students = unpaidDAO.loadAllStudent();
-        for (Custom s : students) {
-            std.add(new StudentTDM(s.getSId(),s.getName(),s.getAddress(),s.getContactNo(),s.getDate(),s.getGender()));
+        List<Object[]> students = unpaidDAO.loadAllStudent();
+        for (Object[] s : students) {
+            std.add(new CustomTDM(s[1].toString(),s[2].toString(),s[0].toString(),s[5].toString(),s[3].toString(),s[4].toString()));
         }
         return std;
     }
