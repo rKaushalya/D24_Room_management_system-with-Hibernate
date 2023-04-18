@@ -14,7 +14,7 @@ public class BOFactory {
     }
 
     public enum Types{
-        STUDENT,ROOM,RESERVATION,EMPLOYEE,USER,LOGIN,FORGET
+        STUDENT,ROOM,RESERVATION,EMPLOYEE,USER,LOGIN,FORGET,UNPAID
     }
 
     public SuperBO getBO(Types types){
@@ -33,6 +33,8 @@ public class BOFactory {
                 return new LoginBOImpl();
             case FORGET:
                 return new ForgetPasswordBOImpl();
+            case UNPAID:
+                return new UnpaidStudentBOImpl();
             default:
                 return null;
         }
