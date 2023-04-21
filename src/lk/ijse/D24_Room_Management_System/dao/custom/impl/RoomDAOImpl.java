@@ -67,4 +67,34 @@ public class RoomDAOImpl implements RoomDAO {
         session.close();
         return list;
     }
+
+    @Override
+    public List<Room> getRoom1() {
+        List<Room> list = session.createQuery("FROM Room WHERE rId = 'RM-1324'").list();
+        session.close();
+        return list;
+    }
+
+    @Override
+    public List<Room> getRoom2() {
+        List<Room> list = session.createQuery("FROM Room WHERE rId = 'RM-5467'").list();
+        session.close();
+        return list;
+    }
+
+    @Override
+    public List<Room> getRoom3() {
+        List<Room> list = session.createQuery("FROM Room WHERE rId = 'RM-7896'").list();
+        session.close();
+        return list;
+    }
+
+    @Override
+    public List<Room> getRoom4() {
+        List<Room> list = session.createQuery("FROM Room WHERE rId = 'RM-0093'").list();
+        session.close();
+        return list;
+    }
+
+
 }

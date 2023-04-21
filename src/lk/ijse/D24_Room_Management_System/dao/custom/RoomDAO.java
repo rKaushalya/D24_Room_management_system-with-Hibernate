@@ -10,4 +10,12 @@ public interface RoomDAO extends CrudDAO<Room , String> {
     List<Room> getAll();
 
     List<String> getRoomId();
+
+    List<Room> getRoom1();
+
+    List<Room> getRoom2();
+
+    List<Room> getRoom3();
+
+    List<Room> getRoom4();
 }
