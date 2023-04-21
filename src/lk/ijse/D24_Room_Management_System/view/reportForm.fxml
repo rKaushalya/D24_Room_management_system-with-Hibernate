@@ -12,6 +12,6 @@
             <Font name="Georgia" size="35.0" />
          </font>
       </Text>
-      <JFXButton layoutX="213.0" layoutY="249.0" text="Student Report" />
+      <JFXButton layoutX="213.0" layoutY="249.0" onAction="#loadEmployeeReportOnAction" text="Employee Report" />
    </children>
 </AnchorPane>

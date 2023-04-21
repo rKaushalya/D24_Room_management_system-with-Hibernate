@@ -12,7 +12,7 @@
    <children>
       <AnchorPane prefHeight="802.0" prefWidth="288.0" style="-fx-background-color: linear-gradient(to right top, #5f27cd,#6c5ce7,#4834d4);">
          <children>
-            <JFXButton layoutX="27.0" layoutY="168.0" onAction="#loadDashbordUiOnAction" prefHeight="53.0" prefWidth="235.0" style="-fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="DashBord" textFill="#220404">
+            <JFXButton layoutX="27.0" layoutY="188.0" onAction="#loadDashbordUiOnAction" prefHeight="53.0" prefWidth="235.0" style="-fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="DashBord" textFill="#220404">
                <font>
                   <Font name="Candara" size="18.0" />
                </font>
@@ -20,7 +20,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="27.0" layoutY="259.0" onAction="#loadRegisterOnAction" prefHeight="53.0" prefWidth="235.0" style="-fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Register" textFill="#220404">
+            <JFXButton layoutX="27.0" layoutY="293.0" onAction="#loadRegisterOnAction" prefHeight="53.0" prefWidth="235.0" style="-fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Register" textFill="#220404">
                <font>
                   <Font name="Candara" size="18.0" />
                </font>
@@ -28,7 +28,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="27.0" layoutY="353.0" onAction="#loadStudentOnAction" prefHeight="53.0" prefWidth="235.0" style="-fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Manage Student" textFill="#220404">
+            <JFXButton layoutX="27.0" layoutY="401.0" onAction="#loadStudentOnAction" prefHeight="53.0" prefWidth="235.0" style="-fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Manage Student" textFill="#220404">
                <font>
                   <Font name="Candara" size="18.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="27.0" layoutY="449.0" onAction="#loadRoomOnAction" prefHeight="53.0" prefWidth="235.0" style="-fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Manage Room" textFill="#220404">
+            <JFXButton layoutX="27.0" layoutY="505.0" onAction="#loadRoomOnAction" prefHeight="53.0" prefWidth="235.0" style="-fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Manage Room" textFill="#220404">
                <font>
                   <Font name="Candara" size="18.0" />
                </font>
@@ -44,15 +44,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="27.0" layoutY="541.0" onAction="#loadEmployeeOnAction" prefHeight="53.0" prefWidth="235.0" style="-fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Manage Employee" textFill="#220404">
-               <font>
-                  <Font name="Candara" size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton layoutX="27.0" layoutY="631.0" onAction="#loadReportOnAction" prefHeight="53.0" prefWidth="235.0" style="-fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Report" textFill="#220404">
+            <JFXButton layoutX="26.0" layoutY="607.0" onAction="#loadEmployeeOnAction" prefHeight="53.0" prefWidth="235.0" style="-fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" text="Manage Employee" textFill="#220404">
                <font>
                   <Font name="Candara" size="18.0" />
                </font>
