@@ -61,22 +61,22 @@
       </AnchorPane>
       <AnchorPane fx:id="dashBordPane" layoutX="288.0" layoutY="43.0" prefHeight="759.0" prefWidth="912.0">
          <children>
-            <JFXButton layoutX="79.0" layoutY="165.0" prefHeight="107.0" prefWidth="146.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 15;" text="17" textFill="#131a72">
+            <JFXButton fx:id="txtId1" layoutX="79.0" layoutY="165.0" prefHeight="107.0" prefWidth="146.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 15;" text="17" textFill="#131a72">
                <font>
                   <Font name="Consolas" size="50.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="279.0" layoutY="165.0" opacity="0.85" prefHeight="107.0" prefWidth="146.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 15;" text="17" textFill="#131a72">
+            <JFXButton fx:id="txtId2" layoutX="279.0" layoutY="165.0" opacity="0.85" prefHeight="107.0" prefWidth="146.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 15;" text="17" textFill="#131a72">
                <font>
                   <Font name="Consolas" size="50.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="483.0" layoutY="165.0" prefHeight="107.0" prefWidth="146.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 15;" text="17" textFill="#131a72">
+            <JFXButton fx:id="txtId3" layoutX="483.0" layoutY="165.0" prefHeight="107.0" prefWidth="146.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 15;" text="17" textFill="#131a72">
                <font>
                   <Font name="Consolas" size="50.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="687.0" layoutY="165.0" prefHeight="107.0" prefWidth="146.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 15;" text="17" textFill="#131a72">
+            <JFXButton fx:id="txtId4" layoutX="687.0" layoutY="165.0" prefHeight="107.0" prefWidth="146.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 15;" text="17" textFill="#131a72">
                <font>
                   <Font name="Consolas" size="50.0" />
                </font>
