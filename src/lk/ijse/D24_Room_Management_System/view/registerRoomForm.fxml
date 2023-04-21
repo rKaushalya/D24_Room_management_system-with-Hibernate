@@ -68,7 +68,7 @@
             <Font name="Constantia" size="22.0" />
          </font>
       </Text>
-      <JFXButton layoutX="619.0" layoutY="559.0" onAction="#registerOnAction" opacity="0.8" prefHeight="51.0" prefWidth="129.0" ripplerFill="#cc0fb2" style="-fx-background-color: blue; -fx-background-radius: 15;" text="Register" textFill="#f6f6f6" wrapText="true">
+      <JFXButton fx:id="btnRegister" layoutX="596.0" layoutY="559.0" onAction="#registerOnAction" opacity="0.8" prefHeight="51.0" prefWidth="215.0" ripplerFill="#cc0fb2" style="-fx-background-color: blue; -fx-background-radius: 5;" text="Register" textFill="#f6f6f6" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>

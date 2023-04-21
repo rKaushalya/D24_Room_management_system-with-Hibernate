@@ -1,11 +1,13 @@
 package lk.ijse.D24_Room_Management_System.controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.Cursor;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -21,6 +23,7 @@ import lk.ijse.D24_Room_Management_System.dto.StudentDTO;
 import lk.ijse.D24_Room_Management_System.view.tdm.RoomTDM;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.view.JasperViewer;
+import org.apache.poi.hssf.util.HSSFColor;
 
 import java.io.InputStream;
 import java.time.LocalDate;
@@ -42,6 +45,7 @@ public class RegisterRoomFormController {
     public TableColumn clmKMoney;
     public TableColumn clmQty;
     public JFXComboBox cmbStatus;
+    public JFXButton btnRegister;
 
     private Matcher userNameMatcher;
     private Matcher telMatcher;
@@ -129,9 +133,15 @@ public class RegisterRoomFormController {
         setPatten();
         if (!userNameMatcher.matches()){
             txtName.setFocusColor(Paint.valueOf("Red"));
+            btnRegister.setDisable(true);
+            btnRegister.setText("Something Wrong");
+            btnRegister.setStyle("-fx-background-color: red;");
         }else {
             txtName.setFocusColor(Paint.valueOf("Blue"));
             txtAddress.requestFocus();
+            btnRegister.setDisable(false);
+            btnRegister.setText("Register");
+            btnRegister.setStyle("-fx-background-color: blue;");
         }
     }
 
@@ -139,9 +149,15 @@ public class RegisterRoomFormController {
         setPatten();
         if (!address.matches()){
             txtAddress.setFocusColor(Paint.valueOf("Red"));
+            btnRegister.setDisable(true);
+            btnRegister.setText("Something Wrong");
+            btnRegister.setStyle("-fx-background-color: red;");
         }else {
             txtAddress.setFocusColor(Paint.valueOf("Blue"));
             txtContact.requestFocus();
+            btnRegister.setDisable(false);
+            btnRegister.setText("Register");
+            btnRegister.setStyle("-fx-background-color: blue;");
         }
     }
 
@@ -149,9 +165,15 @@ public class RegisterRoomFormController {
         setPatten();
         if (!telMatcher.matches()){
             txtContact.setFocusColor(Paint.valueOf("Red"));
+            btnRegister.setDisable(true);
+            btnRegister.setText("Something Wrong");
+            btnRegister.setStyle("-fx-background-color: red;");
         }else {
             txtContact.setFocusColor(Paint.valueOf("Blue"));
             txtDob.requestFocus();
+            btnRegister.setDisable(false);
+            btnRegister.setText("Register");
+            btnRegister.setStyle("-fx-background-color: blue;");
         }
     }
 
