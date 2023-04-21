@@ -11,4 +11,8 @@ public interface DashBordBO extends SuperBO {
     int getRoomCount3();
 
     int getRoomCount4();
+
+    int getStudentCount();
+
+    int getEmployeeCount();
 }

@@ -121,6 +121,26 @@
                   <Font name="Consolas" size="23.0" />
                </font>
             </Text>
+            <Text layoutX="142.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All Student Count">
+               <font>
+                  <Font name="Candara Bold" size="26.0" />
+               </font>
+            </Text>
+            <JFXButton fx:id="txtStudent" layoutX="150.0" layoutY="509.0" prefHeight="146.0" prefWidth="181.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 15;" text="17" textFill="#131a72">
+               <font>
+                  <Font name="Consolas" size="60.0" />
+               </font>
+            </JFXButton>
+            <Text layoutX="531.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All Employee Count">
+               <font>
+                  <Font name="Candara Bold" size="26.0" />
+               </font>
+            </Text>
+            <JFXButton fx:id="txtEmployee" layoutX="550.0" layoutY="509.0" prefHeight="146.0" prefWidth="181.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 15;" text="17" textFill="#131a72">
+               <font>
+                  <Font name="Consolas" size="60.0" />
+               </font>
+            </JFXButton>
          </children></AnchorPane>
       <Text layoutX="338.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :">
          <font>

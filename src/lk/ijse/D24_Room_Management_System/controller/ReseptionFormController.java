@@ -26,8 +26,11 @@ public class ReseptionFormController {
     public JFXButton txtId2;
     public JFXButton txtId3;
     public JFXButton txtId4;
+    public JFXButton txtStudent;
+    public JFXButton txtEmployee;
 
     private final DashBordBO dashBO = (DashBordBO) BOFactory.getBoFactory().getBO(BOFactory.Types.DASHBORD);
+
 
     public void initialize(){
         setTime();
@@ -37,6 +40,26 @@ public class ReseptionFormController {
         getCount2();
         getCount3();
         getCount4();
+        getStudentCount();
+        getEmployeeCount();
+    }
+
+    private void getStudentCount(){
+        try {
+            int studentCount = dashBO.getStudentCount();
+            txtStudent.setText(String.valueOf(studentCount));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void getEmployeeCount(){
+        try {
+            int employeeCount = dashBO.getEmployeeCount();
+            txtEmployee.setText(String.valueOf(employeeCount));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void getCount1(){

@@ -2,8 +2,12 @@ package lk.ijse.D24_Room_Management_System.bo.custom.impl;
 
 import lk.ijse.D24_Room_Management_System.bo.custom.DashBordBO;
 import lk.ijse.D24_Room_Management_System.dao.DAOFactory;
+import lk.ijse.D24_Room_Management_System.dao.custom.EmployeeDAO;
 import lk.ijse.D24_Room_Management_System.dao.custom.RoomDAO;
+import lk.ijse.D24_Room_Management_System.dao.custom.StudentDAO;
+import lk.ijse.D24_Room_Management_System.entity.Employee;
 import lk.ijse.D24_Room_Management_System.entity.Room;
+import lk.ijse.D24_Room_Management_System.entity.Student;
 import lk.ijse.D24_Room_Management_System.util.FactoryConfiguration;
 import org.hibernate.Session;
 
@@ -11,6 +15,8 @@ import java.util.List;
 
 public class DashBordBOImpl implements DashBordBO {
     private final RoomDAO roomDAO = (RoomDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.Types.ROOM);
+    private final StudentDAO studentDAO = (StudentDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.Types.STUDENT);
+    private final EmployeeDAO empDAO = (EmployeeDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.Types.EMPLOYEE);
 
     @Override
     public Session getSession() {
@@ -61,6 +67,30 @@ public class DashBordBOImpl implements DashBordBO {
         int count = 0;
         for (Room r : room1) {
             count = r.getQty();
+        }
+        return count;
+    }
+
+    @Override
+    public int getStudentCount() {
+        Session session = getSession();
+        studentDAO.setSession(session);
+        List<Student> all = studentDAO.getAll();
+        int count = 0;
+        for (Student student : all) {
+            count ++;
+        }
+        return count;
+    }
+
+    @Override
+    public int getEmployeeCount() {
+        Session session = getSession();
+        empDAO.setSession(session);
+        List<Employee> employee = empDAO.getEmployee();
+        int count = 0;
+        for (Employee e : employee) {
+            count ++;
         }
         return count;
     }

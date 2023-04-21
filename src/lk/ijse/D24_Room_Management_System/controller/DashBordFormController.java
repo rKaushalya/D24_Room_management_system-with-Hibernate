@@ -29,6 +29,8 @@ public class DashBordFormController {
     public JFXButton txtId4;
 
     private final DashBordBO dashBO = (DashBordBO) BOFactory.getBoFactory().getBO(BOFactory.Types.DASHBORD);
+    public JFXButton txtStudent;
+    public JFXButton txtEmployee;
 
     public void initialize(){
         LocalDate date = LocalDate.now();
@@ -38,12 +40,32 @@ public class DashBordFormController {
         getCount2();
         getCount3();
         getCount4();
+        getStudentCount();
+        getEmployeeCount();
     }
 
     public void setUi(String ui) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource(ui));
         dashBordPane.getChildren().clear();
         dashBordPane.getChildren().add(parent);
+    }
+
+    private void getStudentCount(){
+        try {
+            int studentCount = dashBO.getStudentCount();
+            txtStudent.setText(String.valueOf(studentCount));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void getEmployeeCount(){
+        try {
+            int employeeCount = dashBO.getEmployeeCount();
+            txtEmployee.setText(String.valueOf(employeeCount));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void getCount1(){

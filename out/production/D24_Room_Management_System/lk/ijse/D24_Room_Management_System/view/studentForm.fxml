@@ -68,7 +68,7 @@
             <Font name="Courier New Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <TableView fx:id="tblStudent" layoutX="109.0" layoutY="539.0" prefHeight="117.0" prefWidth="662.0">
+      <TableView fx:id="tblStudent" layoutX="109.0" layoutY="539.0" prefHeight="175.0" prefWidth="662.0">
          <columns>
             <TableColumn fx:id="clmId" prefWidth="91.66665649414062" text="Student_Id" />
             <TableColumn fx:id="clmName" prefWidth="142.66668701171875" text="Name" />
