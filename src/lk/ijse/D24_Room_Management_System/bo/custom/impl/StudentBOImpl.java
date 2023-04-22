@@ -67,7 +67,7 @@ public class StudentBOImpl implements StudentBO {
         try {
             studentDAO.setSession(session);
             boolean delete = studentDAO.delete(new Student(dto.getSId(), dto.getName(), dto.getAddress(),
-                    dto.getContactNo(), dto.getDate(), dto.getGender()));
+                    dto.getContactNo(), dto.getDate(), dto.getGender(),dto.getStudentDetails()));
             transaction.commit();
             session.close();
             return delete;

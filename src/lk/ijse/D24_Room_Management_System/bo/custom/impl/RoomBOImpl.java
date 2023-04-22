@@ -49,7 +49,7 @@ public class RoomBOImpl implements RoomBO {
         try {
             roomDAO.setSession(session);
             boolean delete = roomDAO.delete(new Room(dto.getRId(), dto.getType(),
-                    dto.getKeyMoney(), dto.getQty()));
+                    dto.getKeyMoney(), dto.getQty(),dto.getRoomDetails()));
             transaction.commit();
             session.close();
             return delete;
