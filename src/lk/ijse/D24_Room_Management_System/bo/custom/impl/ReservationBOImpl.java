@@ -12,6 +12,7 @@ import lk.ijse.D24_Room_Management_System.entity.Reservation;
 import lk.ijse.D24_Room_Management_System.entity.Room;
 import lk.ijse.D24_Room_Management_System.entity.Student;
 import lk.ijse.D24_Room_Management_System.util.FactoryConfiguration;
+import lk.ijse.D24_Room_Management_System.view.tdm.CustomTDM;
 import lk.ijse.D24_Room_Management_System.view.tdm.RoomTDM;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -85,6 +86,19 @@ public class ReservationBOImpl implements ReservationBO {
             roomId.add(id);
         }
         return roomId;
+    }
+
+    @Override
+    public ObservableList<CustomTDM> getAllData() {
+        ObservableList<CustomTDM> all = FXCollections.observableArrayList();
+        Session session = getSession();
+        resDAO.setSession(session);
+        List<Reservation> data = resDAO.allData();
+        for (Reservation r : data) {
+            all.add(new CustomTDM(r.getStudent().getSId(),r.getStudent().getName(),r.getResId(),r.getStatus(),
+                    r.getRoom().getRId(),r.getRoom().getType(),r.getDate()));
+        }
+        return all;
     }
 
     @Override

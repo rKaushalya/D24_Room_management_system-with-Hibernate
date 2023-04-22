@@ -20,12 +20,10 @@ public class Reservation {
     private String status;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "student_id",
-     referencedColumnName = "student_id")
+    @JoinColumn(name = "student_id", referencedColumnName = "student_id")
     private Student student;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "room_type_id",
-    referencedColumnName = "room_type_id")
+    @JoinColumn(name = "room_type_id", referencedColumnName = "room_type_id")
     private Room room;
 }

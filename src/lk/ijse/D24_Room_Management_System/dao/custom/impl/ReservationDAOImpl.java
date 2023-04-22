@@ -36,4 +36,12 @@ public class ReservationDAOImpl implements ReservationDAO {
         }
         return null;
     }
+
+    @Override
+    public List<Reservation> allData() {
+        Query query = session.createQuery("FROM Reservation");
+        List<Reservation> list = query.list();
+        session.close();
+        return list;
+    }
 }

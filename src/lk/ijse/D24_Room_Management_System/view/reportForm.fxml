@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="759.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Room_Management_System.controller.ReportFormController">
    <children>
-      <Text fill="#2d60d7" layoutX="369.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report" textAlignment="CENTER" wrappingWidth="174.61419677734375">
+      <Text fill="#2d60d7" layoutX="317.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Reservation" textAlignment="CENTER" wrappingWidth="277.947509765625">
          <font>
             <Font name="Georgia" size="35.0" />
          </font>
       </Text>
-      <JFXButton layoutX="213.0" layoutY="249.0" onAction="#loadEmployeeReportOnAction" text="Employee Report" />
+      <JFXButton layoutX="186.0" layoutY="606.0" onAction="#loadEmployeeReportOnAction" text="Employee Report" />
+      <TableView fx:id="tblRes" layoutX="57.0" layoutY="167.0" prefHeight="332.0" prefWidth="798.0">
+        <columns>
+          <TableColumn fx:id="clmStdId" prefWidth="96.66668701171875" text="Student Id" />
+          <TableColumn fx:id="clmName" prefWidth="100.0" text="Name" />
+            <TableColumn fx:id="clmRoomId" prefWidth="110.66668701171875" text="Room Id" />
+            <TableColumn fx:id="clmRType" prefWidth="123.33331298828125" text="Type" />
+            <TableColumn fx:id="clmResId" prefWidth="116.6666259765625" text="Res Id" />
+            <TableColumn fx:id="clmStatus" prefWidth="113.6666259765625" text="Status" />
+            <TableColumn fx:id="clmDate" prefWidth="137.66668701171875" text="Date" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
